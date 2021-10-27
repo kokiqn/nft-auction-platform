@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Logo = ({type}) => {
+function Logo ({ type }) {
   const defaultLogo = '/images/logo.svg';
   const mutedLogo = '/images/logo-muted.svg'
 

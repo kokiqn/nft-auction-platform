@@ -1,0 +1,36 @@
+@use "../../styles/colors";
+
+.wrapper {
+  padding: 20px;
+  background-color: colors.$background_paper;
+}
+
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  background-color: colors.$background_default;
+  width: 50%;
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-radius: 30px;
+  padding: 5px 25px 15px 20px;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+}
+
+.grid button {
+  color: white !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.grid > div:last-child > button {
+  background-color: colors.$primary_main !important;
+}

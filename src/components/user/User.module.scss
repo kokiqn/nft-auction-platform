@@ -1,0 +1,25 @@
+@use '../../styles/colors.scss';
+
+.user {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  max-width: fit-content;
+}
+
+.user p {
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 0.2rem!important;
+}
+
+.info {
+  color: colors.$info_main;
+  margin-top: 0;
+  font-size: 0.95rem;
+  margin-top: -0.2rem !important;
+}

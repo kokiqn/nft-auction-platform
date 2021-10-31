@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <>
       <Header/>
-      <User name='pepe' info='245 items'/>
+      <User/>
     </>
   )
 }

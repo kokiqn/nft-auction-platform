@@ -8,35 +8,46 @@ import millify from 'millify';
 
 function format(num) {
   return millify(num, {
-    precision: 1,
-    lowercase: true
+    units: ['k', 'M', 'B'],
+    precision: 2
   });
 }
 
-function Card({ defaults }) {
+export default function Card({
+  name,
+  mediaUrl,
+  user = {
+    avatarUrl: '/images/avatar.png',
+    verified: false
+  },
+  price,
+  currency,
+  likes = 1.1
+}) {
   return (
     <div>
       <CardContainer className={styles.card}>
         <CardHeader
           className={styles.header}
-          avatar={<Avatar url={defaults.user.avatarUrl}
-            verified={defaults.user.verified}
+          avatar={<Avatar
+            url={user.avatarUrl}
+            verified={user.verified}
             size="30px"
           />}
         />
         <CardMedia
           className={styles.media}
           component="img"
-          image={defaults.mediaUrl}
+          image={mediaUrl}
         />
         <CardActions className={styles.bottom}>
           <CardContent sx={{ padding: 0 }}>
-            <p className={styles.title}>{defaults.title}</p>
-            <p className={styles.price}>{defaults.price} {defaults.currency}</p>
+            <p className={styles.title}>{name}</p>
+            <p className={styles.price}>{price} {currency}</p>
           </CardContent>
           <Chip
             className={styles.likes}
-            label={format(23990)}
+            label={format(likes)}
             variant="outlined"
             icon={<FavoriteIcon fontSize="30" sx={{ color: "#24f25e !important" }} />}
           />
@@ -45,5 +56,3 @@ function Card({ defaults }) {
     </div>
   )
 }
-
-export default Card;

@@ -1,0 +1,40 @@
+@use "/src/styles/colors";
+
+.card {
+  max-width: max-content;
+  margin: auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  .header {
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .media {
+    width: 90%;
+    margin: auto;
+  }
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .title {
+    margin-bottom: -0.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .price {
+    margin-top: -0.2rem;
+    color: colors.$secondary_main;
+    font-size: 0.9rem;
+  }
+  .likes {
+    font-family: inherit;
+    font-size:1rem;
+    color: colors.$secondary_main;
+    border: 2px solid colors.$secondary_main;
+    padding-left: 7px;
+  }
+}

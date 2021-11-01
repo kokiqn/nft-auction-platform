@@ -8,7 +8,7 @@ import millify from 'millify';
 
 function format(num) {
   return millify(num, {
-    units: ['k', 'M', 'B'],
+    units: ['', 'k', 'M', 'B'],
     precision: 2
   });
 }
@@ -22,7 +22,7 @@ export default function Card({
   },
   price,
   currency,
-  likes = 1.1
+  likes = 0
 }) {
   return (
     <div>
@@ -43,7 +43,7 @@ export default function Card({
         <CardActions className={styles.bottom}>
           <CardContent sx={{ padding: 0 }}>
             <p className={styles.title}>{name}</p>
-            <p className={styles.price}>{price} {currency}</p>
+            <p className={styles.price}>~{price} {currency}</p>
           </CardContent>
           <Chip
             className={styles.likes}

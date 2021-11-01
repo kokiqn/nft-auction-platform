@@ -6,13 +6,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import styles from './Card.module.scss';
 import millify from 'millify';
 
-function format(num) {
-  return millify(num, {
-    units: ['', 'k', 'M', 'B'],
-    precision: 2
-  });
-}
-
 export default function Card({
   name,
   mediaUrl,
@@ -24,6 +17,14 @@ export default function Card({
   currency,
   likes = 0
 }) {
+
+  function format(num) {
+    return millify(num, {
+      units: ['', 'k', 'M', 'B'],
+      precision: 2
+    });
+  }
+
   return (
     <div>
       <CardContainer className={styles.card}>

@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <div className={classNames(styles.wrapper)}>
-      <Container className={classNames(styles.container)} maxWidth="xl">
+      <Container className={classNames(styles.container)} maxWidth="xl" disableGutters>
         <Logo />
         <Box className={styles.box}>
           <SearchIcon sx={{ color: 'smoke', mr: 1, my: 0.5, fontSize: 20 }} />

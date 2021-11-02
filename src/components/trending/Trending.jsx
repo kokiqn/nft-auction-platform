@@ -34,7 +34,7 @@ export default function Trending({ cards = [] }) {
             </Select>
           </FormControl>
         </div>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} justifyContent="center">
           {cards.map((card, key) => {
             return (
               <Grid key={key} item xs={12} sm={3}>

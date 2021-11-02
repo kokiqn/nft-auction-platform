@@ -1,10 +1,13 @@
-import React from 'react'
+import { useState } from 'react';
+import millify from 'millify';
+import Countdown from 'react-countdown';
+
 import Avatar from '../avatar/Avatar';
-import { Card as CardContainer, CardMedia, CardHeader, CardActions, CardContent, Chip } from '@mui/material';
+import { Card as CardContainer, CardMedia, CardHeader, CardActions, CardContent, Chip, Button, CardActionArea } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 import styles from './Card.module.scss';
-import millify from 'millify';
 
 export default function Card({
   name,
@@ -15,8 +18,57 @@ export default function Card({
   },
   price,
   currency,
-  likes = 0
+  likes = 0,
+  timeLeft,
 }) {
+
+  const [live, setLive] = useState(true);
+  const [time, setTime] = useState(timeLeft);
+
+  const LiveCard = () => {
+
+    return <CardActionArea>
+      <div className={styles.badge}>
+        <Button size="small">
+          <FiberManualRecordIcon fontSize="small" sx={{ paddingRight: "5px" }} />
+          LIVE
+        </Button>
+      </div>
+      <CardMedia
+        className={styles.media}
+        component="img"
+        image={mediaUrl}
+      />
+      <Countdown
+        className={styles.countdown}
+        date={Date.now() + time}
+        onComplete={() => reset()} />
+    </CardActionArea>
+  };
+  const reset = () => {
+    setTime(undefined);
+    setLive(false);
+  }
+
+  const RegularCard = () => {
+    return <CardMedia
+      className={styles.media}
+      component="img"
+      image={mediaUrl}
+    />
+  };
+
+  const UpdateCard = () => {
+    if (time != undefined) {
+      setLive(true)
+    }
+
+    if (live) {
+      return <LiveCard />
+    }
+    return <RegularCard />
+  }
+
 
   function format(num) {
     return millify(num, {
@@ -36,11 +88,9 @@ export default function Card({
             size="30px"
           />}
         />
-        <CardMedia
-          className={styles.media}
-          component="img"
-          image={mediaUrl}
-        />
+        <div className={styles.mediaDiv}>
+          <UpdateCard />
+        </div>
         <CardActions className={styles.bottom}>
           <CardContent sx={{ padding: 0 }}>
             <p className={styles.title}>{name}</p>

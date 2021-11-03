@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Card from '../card/Card'
 import { Grid, Container, Select, MenuItem, FormControl } from '@mui/material';
 
-import styles from './Trending.module.scss'
+import styles from './Auctions.module.scss'
 
-export default function Trending({ cards = [] }) {
+export default function Auctions({ cards = [] }) {
   const [value, setValue] = useState(7);
 
   const handleChange = (event) => {
@@ -15,7 +15,7 @@ export default function Trending({ cards = [] }) {
     <div className={styles.container}>
       <Container maxWidth="xl">
         <div className={styles.header}>
-          <h1 style={{ fontFamily: "Gill Sans MT" }}>Trending</h1>
+          <h1 style={{ fontFamily: "Gill Sans MT" }}>🔥 Live Auctions</h1>
           <FormControl sx={{ minWidth: 120 }}>
             <Select
               sx={{ fontFamily: "Gill Sans MT", color: "#e1e1fc", fill: "#e1e1fc" }}
@@ -35,7 +35,7 @@ export default function Trending({ cards = [] }) {
           {cards.map((card, key) => {
             return (
               <Grid key={key} item xs={12} sm={3}>
-                <Card
+                <Card className={styles.item}
                   {...card}
                 />
               </Grid>

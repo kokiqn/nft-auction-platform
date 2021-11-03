@@ -1,4 +1,4 @@
-@use "/src/styles/colors.scss";
+@use "/src/styles/colors";
 $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 
 .div {
@@ -10,10 +10,6 @@ $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
 }
 
 .container {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem;
 
   p {

@@ -8,20 +8,22 @@ export default function Footer() {
   return (
     <div className={styles.div}>
       <Container className={styles.container} maxWidth="xl">
-        <Logo type="muted" />
-        <p>Bum All Rights Reserved 2021</p>
         <Grid
           container
-          xs={3}
-          justifyContent="center">
+          justifyContent="space-between"
+          alignItems="center">
+          <Grid item>
+            <Logo type="muted" />
+          </Grid>
+          <Grid item>
+            <p>Bum All Rights Reserved 2021</p>
+          </Grid>
           <Grid item>
             <Button
               size="medium"
               variant="text"
               className={styles.button}
             >Privacy Policy</Button>
-          </Grid>
-          <Grid item>
             <Button
               size="medium"
               variant="text"

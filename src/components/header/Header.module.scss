@@ -1,4 +1,5 @@
 @use "../../styles/colors";
+$text_primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 
 .wrapper {
   padding: 20px;
@@ -13,7 +14,7 @@
 
 .box {
   background-color: colors.$background_default;
-  width: 50%;
+  width: 100%;
   display: flex !important;
   align-items: flex-end;
   justify-content: space-around;
@@ -23,20 +24,14 @@
 
 .box label, .box label:active, .box input {
   color: white !important;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  font-family: $text_primary;
 }
 
-.grid {
-  max-width: 400px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.grid button {
+.button, .buttonLast {
   color: white !important;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  font-family: $text_primary;
 }
 
-.grid > div:last-child > button {
+.buttonLast {
   background-color: colors.$primary_main !important;
 }

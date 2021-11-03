@@ -1,6 +1,5 @@
 import { Container, Grid, TextField, Box, Button, disableUnderline } from "@mui/material/";
 import Link from "../link/Link";
-import classNames from 'classnames'
 import styles from './Header.module.scss'
 
 import Logo from "../logo/Logo";
@@ -16,29 +15,40 @@ export default function Header() {
   }
 
   return (
-    <div className={classNames(styles.wrapper)}>
-      <Container className={classNames(styles.container)} maxWidth="xl" disableGutters>
-        <Logo />
-        <Box className={styles.box}>
-          <SearchIcon sx={{ color: 'smoke', mr: 1, my: 0.5, fontSize: 20 }} />
-          <TextField
-            onChange={handleChange}
-            size="small"
-            id="standard"
-            label="Find items, users and activities"
-            variant="standard"
-            fullWidth
-            InputProps={{ disableUnderline: true }} />
-        </Box>
-        <Grid className={classNames(styles.grid)} container justifyContent="space-between">
+    <div className={styles.wrapper}>
+      <Container className={styles.container} maxWidth="xl">
+        <Grid container
+        justifyContent="space-between"
+        alignItems="center"
+        >
           <Grid item>
-            <Button size="medium">Home</Button>
+            <Logo />
+          </Grid>
+          <Grid item md={5}>
+            <Box className={styles.box}>
+              <SearchIcon sx={{ color: 'smoke', mr: 1, my: 0.5, fontSize: 20 }} />
+              <TextField
+                onChange={handleChange}
+                id="standard"
+                label="Find items, users and activities"
+                variant="standard"
+                fullWidth
+                InputProps={{ disableUnderline: true }} />
+            </Box>
           </Grid>
           <Grid item>
-            <Button size="medium">Activity</Button>
-          </Grid>
-          <Grid item>
-            <Button size="medium">Explore</Button>
+            <Button
+              size="medium"
+              className={styles.button}
+            >Home</Button>
+            <Button
+              className={styles.button}
+              size="medium"
+            >Activity</Button>
+            <Button
+              className={styles.buttonLast}
+              size="medium"
+            >Explore</Button>
           </Grid>
         </Grid>
       </Container>

@@ -8,6 +8,12 @@
   background-color: colors.$background_paper;
   border-radius: 30px;
   transition: all .2s ease-in-out;
+
+  h1 {    
+    background-color: rgba($color: colors.$primary_main, $alpha: 0.1);
+  }
+
+  
 }
 
 .container:hover {

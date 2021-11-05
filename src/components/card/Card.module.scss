@@ -76,3 +76,8 @@ $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
     padding-left: 7px;
   }
 }
+
+.card:hover {
+  transition: all .1s ease-in-out;
+  transform: scale(1.05);
+}

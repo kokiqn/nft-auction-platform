@@ -1,0 +1,13 @@
+.container {
+  padding: 4rem 0;
+}
+
+.item {
+  border-radius: 10px;
+  
+ }
+
+ .item:hover {
+  transition: all .1s ease-in-out;
+  transform: scale(1.03);
+}

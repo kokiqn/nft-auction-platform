@@ -37,6 +37,8 @@ export default function Trending({ cards = [] }) {
               <Grid key={key} item xs={12} sm={3}>
                 <Card
                   {...card}
+                  mediaUrl={card.source.url}
+                  user={{avatarUrl: card.owner.avatar.url, verified: card.owner.verified}}
                 />
               </Grid>
             )

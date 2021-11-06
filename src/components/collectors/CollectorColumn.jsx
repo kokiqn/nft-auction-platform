@@ -1,7 +1,7 @@
 import Collector from './Collector'
-import styles from './CollectorsColumn.module.scss'
+import styles from './CollectorColumn.module.scss'
 
-export default function CollectorsColumn({ items = [...itemData] }) {
+export default function CollectorsColumn({ items = [] }) {
   return (
     <div className={styles.container}>
       {items.map((item, index) => {

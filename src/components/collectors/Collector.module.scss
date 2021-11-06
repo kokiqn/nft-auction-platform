@@ -7,11 +7,12 @@
   max-width: max-content;
 
   .index {
-    padding: 0rem 2rem;
-    background-color: rgba(colors.$primary_main, 15%);
+    width: 90px;
+    text-align: center;
+    background-color: rgba(colors.$primary_main, 25%);
   }
 }
 
 .light {
-  background-color: rgba(colors.$primary_main, 15%);
+  background-color: rgba(colors.$primary_main, 20%);
 }

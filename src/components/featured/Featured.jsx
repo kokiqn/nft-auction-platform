@@ -21,9 +21,8 @@ export default function Featured({ items = [] }) {
             <img
               onClick={() => router.push(item.href)}
               className={styles.item}
-              src={item.image}
-              srcSet={item.image}
-              alt={item.title}
+              src={item.source.url}
+              alt={item.name}
               loading="lazy"
             />
           </ImageListItem>

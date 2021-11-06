@@ -2,7 +2,8 @@
 $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 
 .card {
-  max-width: max-content;
+  max-width: 350px;
+  max-height: max-content;
   margin: auto;
   font-family: $primary_font;
 
@@ -13,6 +14,7 @@ $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
   }
 
   .mediaDiv{
+    height: 330px;
     width: 90%;
     margin: auto;
     border-radius: 10px;
@@ -31,8 +33,9 @@ $primary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
     }
 
     .media {
+      height: 100%;
       width: 100%;
-      margin: auto;
+      object-fit: cover;
       border-radius: 10px;
     }
 

@@ -1,0 +1,17 @@
+@use "../../styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  font-family: colors.$font_primary;
+  max-width: max-content;
+
+  .index {
+    padding: 0rem 2rem;
+    background-color: rgba(colors.$primary_main, 15%);
+  }
+}
+
+.light {
+  background-color: rgba(colors.$primary_main, 15%);
+}

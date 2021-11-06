@@ -1,0 +1,8 @@
+@use "../../styles/colors";
+
+.container {
+  margin: 1rem;
+  max-width: max-content;
+  background-color: rgba(colors.$primary_main, 15%);
+  border-radius: 10px;
+}

@@ -6,7 +6,7 @@ import styles from './TopCollectors.module.scss';
 
 var chunk = require('lodash.chunk');
 
-export default function TopCollectors({ items = [] }) {
+export default function TopCollectors({ collectors = [] }) {
   const [value, setValue] = useState(7);
 
   const handleChange = (event) => {
@@ -15,7 +15,7 @@ export default function TopCollectors({ items = [] }) {
 
   collectors.map((i, k) => i.id = (k + 1));
   
-  const split = chunk(items, 3);
+  const split = chunk(collectors, 3);
 
   return (
     <Container maxWidth="xl" className={styles.container}>

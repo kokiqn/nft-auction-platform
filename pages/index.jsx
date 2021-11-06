@@ -4,14 +4,14 @@ import Auctions from "../src/components/auctions/Auctions"
 import Footer from "../src/components/footer/Footer"
 import How from "../src/components/how/How"
 import Featured from "../src/components/featured/Featured"
-import CollectorsColumn from "../src/components/collector/CollectorsColumn"
+import CollectorColumn from "../src/components/collectors/CollectorColumn"
 
 export default function Index() {
   return (
     <>
       <Header/>
       <Trending/>
-      <CollectorsColumn/>
+      <CollectorColumn/>
       <Featured/>
       <How/>
       <Auctions/>

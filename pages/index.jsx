@@ -15,31 +15,31 @@ import dataNfts from "../public/data/nfts.json"
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
-    useEffect(() => {
-      setFeaturedCards(dataFeatured);
-    }, [])
-
   const [trendingCards, setTrendingCards] = useState([]);
-  useEffect(() => {
-    setTrendingCards(dataTrending);
-  }, [])
-
   const [users, setUsers] = useState([]);
-  useEffect(() => {
-    setUsers(dataUsers);
-  }, [])
-
   const [nfts, setNfts] = useState([]);
-  useEffect(() => {
-    setNfts(dataNfts);
-  }, [])
+    useEffect(() => {
+      dataFeatured[0]["cols"] = 3;
+      dataFeatured[0]["rows"] = 2;
+      dataFeatured.map(obj => obj["href"] = "/about");
+
+      setFeaturedCards(dataFeatured);
+      setTrendingCards(dataTrending);
+
+      dataUsers.sort(function (a, b) {
+        return b.nfts.length - a.nfts.length;
+      });
+
+      setUsers(dataUsers.slice(0, 12));
+      setNfts(dataNfts);
+    }, [])
 
   return (
     <>
       <Header/>
       <Featured items={featuredCards}/>
       <Trending cards={trendingCards}/>
-      <TopCollectors items={users}/>
+      <TopCollectors collectors={users}/>
       <How/>
       <Auctions cards={nfts}/>
       <Footer/>

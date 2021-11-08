@@ -3,7 +3,7 @@ import Step from './Step'
 
 import styles from './How.module.scss'
 
-export default function How({ description, title, items = [], link }) {
+export default function How({ description, title, items = [...itemData], link }) {
   return (
     <div>
       <Container
@@ -48,3 +48,21 @@ export default function How({ description, title, items = [], link }) {
     </div>
   )
 }
+
+let itemData = [
+  {
+    number: Number,
+    title: "What is NFT BUM?",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.",
+  },
+  {
+    number: Number,
+    title: "What is NFT BUM?",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.",
+  },
+  {
+    number: Number,
+    title: "What is NFT BUM?",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.",
+  }
+]

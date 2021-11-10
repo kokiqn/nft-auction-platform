@@ -18,15 +18,9 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
     )
   }
 
-  const EmptyContainer = () => {
-    return (
-      <div className={styles.empty}/>
-    )
-  }
-
   return (
-    <div className={styles["product-info-timer"]}>
-      {timeEnd != null ? <TimerContainer/> : <EmptyContainer/>}
+    <div className={`${styles["product-info-timer"]} ${timeEnd && styles.active}`}>
+      {timeEnd && <TimerContainer/>}
     </div>
   )
 }

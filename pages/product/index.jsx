@@ -6,12 +6,13 @@ import ProductInfoTitle from '../../src/components/product/ProductInfoTitle'
 import ProductInfoStatus from '../../src/components/product/ProductInfoStatus'
 import ProductInfoLikes from '../../src/components/product/ProductInfoLikes'
 import ProductInfoCreator from '../../src/components/product/ProductInfoCreator'
+import ProductInfoTimer from '../../src/components/product/ProductInfoTimer'
 
 export default function Index() {
   return (
     <div>
       <Header/>
-      <ProductInfoCreator/>
+      <ProductInfoTimer/>
       <ProductImage url="/images/nft.jpg"/>
       <ProductInfoTitle/>
       <ProductInfoStatus/>

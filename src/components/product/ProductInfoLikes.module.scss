@@ -1,0 +1,17 @@
+@use "/src/styles/colors.scss";
+
+.product-info-likes {
+  padding: 1rem;
+  font-family: colors.$font_primary;
+  font-weight: bolder;
+  .likes {
+    font-family: inherit;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 2px solid;
+
+    span {
+      padding-left: 4px;
+    }
+  }
+}

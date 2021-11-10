@@ -1,0 +1,15 @@
+@use "/src/styles/colors.scss";
+
+.product-info-status {
+  padding: 1rem;
+  font-family: colors.$font_primary;
+  .status {
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bolder;
+    padding-left: 3px;
+    span {
+      padding-left: 4px;
+    }
+  }
+}

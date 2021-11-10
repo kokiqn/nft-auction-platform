@@ -2,14 +2,15 @@
 
 .product-info-timer {
   margin: 2rem;
-  width: max-content;
+  width: 220px;
   height: 120px;
+  border-radius: 15px;
+  background-color: rgba(#181828, 30%);
   
   .timer {
-    color: rgba(colors.$background_default, 80%);
+    color: rgba(#181828, 80%);
     font-family: colors.$font_primary;
     font-weight: 500;
-    background-color: colors.$secondary_main;
     border-radius: 15px;
 
     .title {
@@ -30,12 +31,9 @@
       text-align: center;
     }
   }
+}
 
-  .empty {
-    height: inherit;
-    width: 218px;
-    border-radius: 15px;
-    background-color: #181828; 
-    opacity: 0.3;
-  }
+.active {
+  background-color: colors.$secondary_main;
+
 }

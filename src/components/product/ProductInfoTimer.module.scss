@@ -1,0 +1,41 @@
+@use "../../styles/colors.scss";
+
+.product-info-timer {
+  margin: 2rem;
+  width: max-content;
+  height: 120px;
+  
+  .timer {
+    color: rgba(colors.$background_default, 80%);
+    font-family: colors.$font_primary;
+    font-weight: 500;
+    background-color: colors.$secondary_main;
+    border-radius: 15px;
+
+    .title {
+      margin: 0;
+      padding: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 12px;
+      text-align: center;
+      background-color: rgba(colors.$background_default, 10%);
+    }
+
+    .countdown {
+      display: block;
+      padding: 1rem 3rem;
+      font-weight: 1000;
+      font-size: 30.6761px;
+      text-align: center;
+    }
+  }
+
+  .empty {
+    height: inherit;
+    width: 218px;
+    border-radius: 15px;
+    background-color: #181828; 
+    opacity: 0.3;
+  }
+}

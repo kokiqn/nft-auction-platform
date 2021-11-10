@@ -1,0 +1,23 @@
+@use "../../styles/colors.scss";
+
+.product-info-creator {
+  margin: 1rem;
+  font-family: colors.$font_primary;
+  border-radius: 20px;
+  max-width: max-content;
+  background-color: colors.$background_paper;
+
+  .title {
+    padding: 0.5rem 0 0.2rem 1.4rem;
+    font-size: .7rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: colors.$text_secondary;
+    background-color: rgba(colors.$primary_main, 15%);
+    border-radius: 20px 20px 0 0;
+  }
+
+  .user-container {
+    padding: 0 0 0rem 0.4rem;
+  }
+}

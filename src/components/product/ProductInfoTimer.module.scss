@@ -1,17 +1,14 @@
 @use "../../styles/colors.scss";
 
 .product-info-timer {
-  margin: 2rem;
-  width: 220px;
-  height: 120px;
   border-radius: 15px;
+  height: 118px;
   background-color: rgba(#181828, 30%);
   
   .timer {
-    color: rgba(#181828, 80%);
+    color: rgba(#181828, 90%);
     font-family: colors.$font_primary;
-    font-weight: 500;
-    border-radius: 15px;
+    font-weight: 600;
 
     .title {
       margin: 0;
@@ -25,8 +22,8 @@
 
     .countdown {
       display: block;
-      padding: 1rem 3rem;
-      font-weight: 1000;
+      padding: 0.8rem 2rem;
+      font-weight: 700;
       font-size: 30.6761px;
       text-align: center;
     }
@@ -35,5 +32,4 @@
 
 .active {
   background-color: colors.$secondary_main;
-
 }

@@ -1,0 +1,17 @@
+@use "../../styles/colors.scss";
+
+.product-actions {
+  .button {
+    padding: 1.25rem 1.875rem;
+    border-radius: 30px;
+    height: 59px;
+    width:  98%;
+    font-family: Montserrat !important;
+    font-weight: 700;
+  }
+
+  .button:disabled {
+    color: colors.$text_disabled !important;
+    border-color: colors.$text_disabled;
+  }
+}

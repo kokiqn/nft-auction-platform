@@ -12,6 +12,7 @@ import ProductInfoTimer from './ProductInfoTimer'
 import styles from './ProductInfo.module.scss'
 import { Grid, Stack } from '@mui/material'
 import ProductTabs from './ProductTabs'
+import ProductActions from './ProductActions'
 
 export default function ProductInfo({
   title,
@@ -46,6 +47,7 @@ export default function ProductInfo({
         </Grid>
       </Grid>
       <ProductTabs />
+      <ProductActions/>
     </div>
   )
 }

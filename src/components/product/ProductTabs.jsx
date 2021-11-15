@@ -1,13 +1,14 @@
 import { TabContext, TabList, TabPanel } from '@mui/lab'
-import { Tab, TableBody, TableCell, TableRow } from '@mui/material'
+import { Tab, Table, TableBody, TableCell, TableRow } from '@mui/material'
 import { Box } from '@mui/system'
+import { formatDistance, parseISO } from 'date-fns';
 import { useState } from 'react';
 
 import User from '../user/User'
 
 import styles from './ProductTabs.module.scss'
 
-export default function ProductTabs({ text, bids = [...list] }) {
+export default function ProductTabs({ text, bids = [] }) {
   const [value, setValue] = useState('details');
 
   const handleChange = (event, newValue) => {
@@ -16,38 +17,42 @@ export default function ProductTabs({ text, bids = [...list] }) {
 
   return (
     <div className={styles["product-tabs"]}>
-      <Box sx={{ width: '100%', typography: 'body1' }}>
-        <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab
-                className={styles["tab-details"]}
-                label="DETAILS"
-                value="details"
-              />
-              <Tab
-                className={styles["tab-bids"]}
-                label="BIDS"
-                value="bids"
-              />
-            </TabList>
-          </Box>
-          <TabPanel value="details">Details</TabPanel>
-          <TabPanel value="bids">
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange}>
+            <Tab
+              className={styles["tab-details"]}
+              label="DETAILS"
+              value="details"
+            />
+            <Tab
+              className={styles["tab-bids"]}
+              label="BIDS"
+              value="bids"
+            />
+          </TabList>
+        </Box>
+        <TabPanel className={styles.details} value="details">{text}</TabPanel>
+        <TabPanel className={styles.bids} value="bids">
+          <Table sx={{ minWidth: 650 }}>
             <TableBody>
               {bids.map((bid, i) => {
                 return (
                   <TableRow className={styles[`table-row-${i}`]}>
-                    <TableCell><User {...bid.user} /></TableCell>
-                    <TableCell>{bid.price}</TableCell>
-                    <TableCell>{bid.time}</TableCell>
+                    <TableCell>
+                      <User {...bid.user} />
+                    </TableCell>
+                    <TableCell className={styles.price}>{bid.price}</TableCell>
+                    <TableCell className={styles.time}>
+                      {formatDistance(parseISO(bid.date), new Date())}
+                    </TableCell>
                   </TableRow>
                 )
               })}
             </TableBody>
-          </TabPanel>
-        </TabContext>
-      </Box>
+          </Table>
+        </TabPanel>
+      </TabContext>
     </div>
   )
 }
@@ -59,22 +64,6 @@ var list = [
       avatar: "/images/avatar.png",
     },
     price: "12 ETH",
-    time: "17 seconds ago",
-  },
-  {
-    user: {
-      name: "patrick",
-      avatar: "/images/avatar.png",
-    },
-    price: "12 ETH",
-    time: "17 seconds ago",
-  },
-  {
-    user: {
-      name: "patrick",
-      avatar: "/images/avatar.png",
-    },
-    price: "12 ETH",
-    time: "17 seconds ago",
+    date: "2021-10-22T08:29:23.382Z",
   },
 ]

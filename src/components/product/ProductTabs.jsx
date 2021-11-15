@@ -8,7 +8,7 @@ import User from '../user/User'
 
 import styles from './ProductTabs.module.scss'
 
-export default function ProductTabs({ text, bids = [] }) {
+export default function ProductTabs({ text, bids = [...list] }) {
   const [value, setValue] = useState('details');
 
   const handleChange = (event, newValue) => {

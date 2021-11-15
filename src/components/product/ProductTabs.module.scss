@@ -1,11 +1,35 @@
 @use "../../styles/colors";
 
 .product-tabs {
-  .tab-details {
+  font-family: colors.$font_primary;
 
+  .tab-details, .tab-bids {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
   }
 
-  .tab-bids {
+  .details, .bids {
+    padding: 0;
+  }
+
+  .details {
+    margin-top: 2rem;
+  }
+
+  .price {
+    color: colors.$secondary_main;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  .time {
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  td {
+    padding: 0;
     border-bottom: none;
   }
 

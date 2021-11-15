@@ -26,7 +26,7 @@ export default function ProductActions({
             className={styles.button}
             onClick={onBid}
             variant="outlined"
-            color= "secondary"
+            color= "success"
             disabled={isLive ? false : true}>
             PLACE BID FOR {bidAmount} {currency}
           </Button>

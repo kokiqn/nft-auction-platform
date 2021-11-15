@@ -38,7 +38,7 @@ export default function ProductTabs({ text, bids = [...list] }) {
             <TableBody>
               {bids.map((bid, i) => {
                 return (
-                  <TableRow className={styles[`table-row-${i}`]}>
+                  <TableRow className={`table-row-${i}`}>
                     <TableCell>
                       <User {...bid.user} />
                     </TableCell>

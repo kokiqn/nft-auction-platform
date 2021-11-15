@@ -1,0 +1,19 @@
+@use "../../styles/colors";
+
+.product-tabs {
+  .tab-details {
+
+  }
+
+  .tab-bids {
+    border-bottom: none;
+  }
+
+  tr:nth-of-type(even) {
+    background-color: rgba(colors.$primary_main, 15%);
+  }
+
+  tr:nth-of-type(odd) {
+    background-color: rgba(colors.$primary_main, 5%);
+  }
+}

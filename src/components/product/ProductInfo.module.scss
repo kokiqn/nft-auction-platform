@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 4rem 1rem 10rem 1rem;
+
+  .container {
+    margin-left: 2.5rem;
+    width: 577px;
+
+    .accent {
+      position: absolute;
+      width: 577px;
+      height: 3px;
+      margin-top: 1.7rem;
+
+      /* accent-primary */
+
+      background: #4e24f2;
+      opacity: 0.2;
+    }
+
+    .stats {
+      margin: 1rem 0 -1.2rem 0;
+    }
+  }
+}

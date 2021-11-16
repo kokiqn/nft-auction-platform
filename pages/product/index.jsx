@@ -1,9 +1,9 @@
-import ProductInfo from "../../src/components/product/ProductInfo";
+import ProductContainer from "../../src/components/product/ProductContainer";
 
 export default function Index() {
   return (
     <div>
-      <ProductInfo/>
+      <ProductContainer/>
     </div>
   )
 }

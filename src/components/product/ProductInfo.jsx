@@ -1,7 +1,4 @@
 import React from 'react'
-import Header from '../header/Header'
-import Footer from '../footer/Footer'
-import ProductImage from './ProductImage'
 import ProductInfoTitle from './ProductInfoTitle'
 import ProductInfoPrice from './ProductInfoPrice'
 import ProductInfoStatus from './ProductInfoStatus'
@@ -11,8 +8,6 @@ import ProductInfoTimer from './ProductInfoTimer'
 
 import styles from './ProductInfo.module.scss'
 import { Grid, Stack } from '@mui/material'
-import ProductTabs from './ProductTabs'
-import ProductActions from './ProductActions'
 
 export default function ProductInfo({
   title,
@@ -46,8 +41,6 @@ export default function ProductInfo({
           <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={onTimeEnd} />
         </Grid>
       </Grid>
-      <ProductTabs />
-      <ProductActions/>
     </div>
   )
 }

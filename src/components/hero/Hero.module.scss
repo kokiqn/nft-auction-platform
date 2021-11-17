@@ -2,8 +2,16 @@
 
 .hero {
   background-color: colors.$primary_main;
+  height: 35%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .text {
   text-align: center;
+  position: relative;
+  top: 27%;
 }

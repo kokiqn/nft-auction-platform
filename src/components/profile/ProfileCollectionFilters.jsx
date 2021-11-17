@@ -30,6 +30,8 @@ export default function ProfileCollectionFilters({ filters = [data] }) {
             className={styles.select}
             labelId="sort-select"
             id="demo-simple-select"
+            variant="outlined"
+            color="primary"
             value={valueSort}
             onChange={handleSort}>
             {filters.map(filter => filter.sort.map((list, i) => {
@@ -43,6 +45,8 @@ export default function ProfileCollectionFilters({ filters = [data] }) {
             className={styles.select}
             labelId="price-select"
             id="demo-simple-select"
+            variant="outlined"
+            color="primary"
             value={valuePrice}
             onChange={handlePrice}>
             {filters.map(filter => filter.price.map((list, i) => {

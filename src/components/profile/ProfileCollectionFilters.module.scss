@@ -1,0 +1,13 @@
+@use "../../styles/colors.scss";
+
+.profile-collection-filters {
+  font-family: Montserrat;
+}
+
+.select {
+  font-size: 0.875rem;
+  padding: 0 -2rem;
+  font-family: Montserrat;
+  font-weight: 500;
+  color: colors.$text_hint
+}

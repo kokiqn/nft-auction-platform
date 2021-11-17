@@ -35,7 +35,10 @@ export default function ProductInfo({
       </Stack>
       <Grid container alignItems="center">
         <Grid item xs={7}>
-          <ProductInfoCreator {...creator} />
+          <ProductInfoCreator
+          name={creator?.username}
+          avatar={creator?.avatar?.formats?.thumbnail?.url}
+          />
         </Grid>
         <Grid item xs={5}>
           <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={onTimeEnd} />

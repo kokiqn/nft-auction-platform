@@ -34,7 +34,7 @@ export default function ProductTabs({ text, bids = [...list] }) {
         </Box>
         <TabPanel className={styles.details} value="details">{text}</TabPanel>
         <TabPanel className={styles.bids} value="bids">
-          <Table sx={{ minWidth: 650 }}>
+          <Table sx={{ minWidth: 500 }}>
             <TableBody>
               {bids.map((bid, i) => {
                 return (

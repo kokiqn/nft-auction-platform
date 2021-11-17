@@ -1,13 +1,35 @@
+@use '../../styles/colors.scss';
+
 .description {
-  maring: auto;
+  margin: 0 auto 20rem auto;
+  position: relative;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  background-color: colors.$background_paper;
+  padding: 3.8rem;
 }
 
 .text {
-  text-align: center;
+  padding-bottom: 4rem;
 }
 
 .image {
-  max-height: 500px;
-  max-width: 90%;
+  max-height: 250px;
+  width: 100%;
   margin: auto;
+}
+
+@media (max-width: 1200px) {
+  .description {
+    width: 90%;
+  }
+}
+
+@media (max-width: 520px) {
+  .description {
+    padding: 1rem;
+  }
 }

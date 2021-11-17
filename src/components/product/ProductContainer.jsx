@@ -17,6 +17,7 @@ export default function ProductContainer({
   bids,
   source,
 }) {
+  console.log(bids)
   return (
     <div className={styles['product-container']}>
       <Grid container justifyContent="center" gap={9}>
@@ -30,18 +31,18 @@ export default function ProductContainer({
             price={price}
             currency={currency}
             likes={likes}
-            onTimeEnd
+            onTimeEnd={(() => timeEnd = false)}
             timeEnd={auction_end}
             isLive={auction_end ? true : false}
           />
-          <ProductTabs text={details} bids={bids} />
+          <ProductTabs text={details} bids={bids} currency={currency}/>
           <ProductActions
             isLive={auction_end}
             buyAmount={price}
             bidAmount={price}
             currency={currency} 
-            onBid
-            onBuy/>
+            onBid={(() => alert(`You have placed a bid on ${name} for ${price} ${currency}!`))}
+            onBuy={(() => alert(`You have bought ${name} for ${price} ${currency}!`))}/>
         </Grid>
       </Grid>
     </div>

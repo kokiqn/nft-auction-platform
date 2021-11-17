@@ -8,7 +8,7 @@ import User from '../user/User'
 
 import styles from './ProductTabs.module.scss'
 
-export default function ProductTabs({ text, bids = [...list] }) {
+export default function ProductTabs({ text, bids = [], currency }) {
   const [value, setValue] = useState('details');
 
   const handleChange = (event, newValue) => {
@@ -42,7 +42,7 @@ export default function ProductTabs({ text, bids = [...list] }) {
                     <TableCell>
                       <User {...bid.user} />
                     </TableCell>
-                    <TableCell className={styles.price}>{bid.price}</TableCell>
+                    <TableCell className={styles.price}>{bid.amount} {currency}</TableCell>
                     <TableCell className={styles.time}>
                       {formatDistance(parseISO(bid.date), new Date())}
                     </TableCell>

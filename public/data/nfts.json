@@ -299,8 +299,9 @@
       "provider": "local",
       "provider_metadata": null,
       "created_at": "2021-10-22T08:29:05.147Z",
-      "updated_at": "2021-10-22T08:29:05.147Z",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus risus, suscipit sit amet aliquam ut, vehicula vitae ipsum. Duis viverra lorem lacus, non ullamcorper neque laoreet vitae. Nunc a posuere velit. Etiam sed commodo tortor, ac pretium libero. Integer in feugiat justo. Proin ut dignissim risus. Proin dignissim ante pharetra enim tempus varius. Nullam justo elit, mattis eu lacus ut, volutpat vestibulum dui. Morbi varius magna luctus tellus rutrum ullamcorper.",
+      "updated_at": "2021-10-22T08:29:05.147Z"
+    },
+    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus risus, suscipit sit amet aliquam ut, vehicula vitae ipsum. Duis viverra lorem lacus, non ullamcorper neque laoreet vitae. Nunc a posuere velit. Etiam sed commodo tortor, ac pretium libero. Integer in feugiat justo. Proin ut dignissim risus. Proin dignissim ante pharetra enim tempus varius. Nullam justo elit, mattis eu lacus ut, volutpat vestibulum dui. Morbi varius magna luctus tellus rutrum ullamcorper.",
       "bids": [
         {
           "user": {
@@ -321,6 +322,5 @@
           "date": "2021-10-22T08:29:23.382Z"
         }
       ]
-    }
   }
 ]

@@ -4,7 +4,7 @@ import styles from './ProfileCollectionFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function ProfileCollectionFilters({ filters = [data] }) {
+export default function ProfileCollectionFilters({ filters }) {
   const [input, setInput] = useState('');
   const [valueSort, setValueSort] = useState('');
   const [valuePrice, setValuePrice] = useState('');
@@ -34,9 +34,9 @@ export default function ProfileCollectionFilters({ filters = [data] }) {
             color="primary"
             value={valueSort}
             onChange={handleSort}>
-            {filters?.map(filter => filter?.sort?.map((list, i) => {
-              return <MenuItem value={i + 1}>{list.label}</MenuItem>
-            }))}
+            {filters?.sort?.map((item, i) => {
+              return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
+            })}
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: 220 }}>
@@ -49,9 +49,9 @@ export default function ProfileCollectionFilters({ filters = [data] }) {
             color="primary"
             value={valuePrice}
             onChange={handlePrice}>
-            {filters?.map(filter => filter?.price?.map((list, i) => {
-              return <MenuItem value={i + 1}>{list.label}</MenuItem>
-            }))}
+            {filters?.price?.map((item, i) => {
+              return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
+            })}
           </Select>
         </FormControl>
         <FormControl size="medium">

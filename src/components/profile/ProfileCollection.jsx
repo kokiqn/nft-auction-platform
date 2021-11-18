@@ -7,7 +7,7 @@ export default function ProfileCollection({ user, filter, items }) {
   return (
     <div className={styles['profile-collection']}>
       <Container maxWidth="xl">
-        <Grid container>
+        <Grid container alignItems="center">
           <Grid item xs={3}>
             <Typography variant="h3" fontSize={48}>Collection</Typography>
           </Grid>

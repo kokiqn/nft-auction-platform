@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import data from '../../../public/data/filtersProfile.json'
+import data from '../../../public/data/filtersActivity.json'
 import styles from './ActivityFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function ActivityFilters({ filters }) {
   const [input, setInput] = useState('');
   const [valueSort, setValueSort] = useState('');
-  const [valuePrice, setValuePrice] = useState('');
+  const [valueType, setvalueType] = useState('');
 
   function handleChange(e) {
     setInput(e.target.value);
@@ -18,7 +18,7 @@ export default function ActivityFilters({ filters }) {
   };
 
   function handlePrice(e) {
-    setValuePrice(e.target.value);
+    setvalueType(e.target.value);
   };
 
   return (
@@ -40,16 +40,16 @@ export default function ActivityFilters({ filters }) {
           </Select>
         </FormControl>
         <FormControl sx={{ minWidth: 220 }}>
-          <InputLabel id="price-select" shrink={false}>{valuePrice == '' && 'Price range'}</InputLabel>
+          <InputLabel id="price-select" shrink={false}>{valueType == '' && 'Type'}</InputLabel>
           <Select
             className={styles.select}
             labelId="price-select"
             id="demo-simple-select"
             variant="outlined"
             color="primary"
-            value={valuePrice}
+            value={valueType}
             onChange={handlePrice}>
-            {filters?.price?.map((item, i) => {
+            {filters?.type?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>

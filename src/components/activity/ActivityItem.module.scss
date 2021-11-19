@@ -1,0 +1,28 @@
+@use "../../styles/colors.scss";
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  width: 940px;
+  background-color: colors.$background_paper;
+  padding: .9rem 1.4rem;
+  border-radius: 15px;
+
+  .activity-item img {
+    max-width: 50px;
+  }
+
+  .paragraphs {
+    margin-left: 2.3rem;
+    line-height: .8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: colors.$text_hint;    
+
+    .small {
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+  }
+}

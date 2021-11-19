@@ -19,7 +19,10 @@ export default function ProfileCollection({ user, filters, items }) {
           {items?.map((card, i) => {
             return (
               <Grid key={i} item xs={3}>
-                <Card user={user} {...card} />
+                <Card
+                  user={user}
+                  mediaUrl={card?.source?.formats?.thumbnail?.url} {...card}
+                />
               </Grid>
             )
           })}

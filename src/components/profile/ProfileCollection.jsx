@@ -3,7 +3,7 @@ import styles from './ProfileCollection.module.scss'
 import ProfileCollectionFilters from "../profile/ProfileCollectionFilters"
 import Card from "../card/Card"
 
-export default function ProfileCollection({ user, filter, items }) {
+export default function ProfileCollection({ user, filters, items }) {
   return (
     <div className={styles['profile-collection']}>
       <Container maxWidth="xl">
@@ -12,7 +12,7 @@ export default function ProfileCollection({ user, filter, items }) {
             <Typography variant="h3" fontSize={48}>Collection</Typography>
           </Grid>
           <Grid item xs={9} >
-            <ProfileCollectionFilters filters={filter} />
+            <ProfileCollectionFilters filters={filters} />
           </Grid>
         </Grid>
         <Grid container paddingTop={3.5} spacing={2}>

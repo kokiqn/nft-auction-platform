@@ -12,7 +12,7 @@ export default function ActivityListItem({ user, created_at, nft, type = 'like' 
     <div className={styles['activity-item']}> 
       <Avatar size={60} url={user?.avatarUrl} verified={user?.verified}/>
       <div className={styles.paragraphs}>
-        <p><strong>{user?.name}</strong> {type === 'like' ? 'liked' : 'bought'} <Link color="secondary">"{nft?.name}"</Link> by <Link color="secondary">{nft?.user.name}</Link></p>
+        <p><strong>{user?.name}</strong> {type === 'like' ? 'liked' : 'bought'} <Link color="secondary">"{nft?.name}"</Link> by <Link color="secondary">{nft?.user?.name}</Link></p>
         <p className={styles.small}>{created_at ? timeFormat : ''} </p>
       </div>
     </div>

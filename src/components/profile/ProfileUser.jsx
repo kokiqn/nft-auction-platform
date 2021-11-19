@@ -6,8 +6,8 @@ export default function ProfileUser({ name, info, avatar, verified }) {
   return (
     <div className={styles['profile-user']}>
       <Avatar size={192} url={avatar} verified={verified}/>
-      <Typography fontWeight={800} paddingTop={3} variant="h3">{name}</Typography>
-      <Typography paddingTop={3} variant="body1">{info}</Typography>
+      <Typography fontWeight={800} fontSize={48} paddingTop={2} variant="h3">{name}</Typography>
+      <Typography color="#e1e1fc" paddingTop={2} fontSize={14} variant="body1">{info}</Typography>
     </div>
   )
 }

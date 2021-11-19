@@ -1,5 +1,10 @@
+@use "../../styles/colors.scss";
+
 .profile-user {
+  position: relative;
+  top: 178px;
   margin: auto;
+  margin-bottom: 16rem;
   max-width: 30%;
   display: flex;
   flex-direction: column;

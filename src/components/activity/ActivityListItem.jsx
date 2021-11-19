@@ -1,9 +1,9 @@
-import styles from "./ActivityItem.module.scss"
+import styles from "./ActivityListItem.module.scss"
 import { formatDistance, parseISO } from "date-fns"
 import Avatar from '../avatar/Avatar'
 import { Link } from "@mui/material"
 
-export default function ActivityItem({ user, created_at, nft, type = 'like' }) {
+export default function ActivityListItem({ user, created_at, nft, type = 'like' }) {
   function timeFormat() {
     `${formatDistance(parseISO(created_at), new Date())} ago`
   }

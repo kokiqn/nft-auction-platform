@@ -1,11 +1,11 @@
 import ActivityFilters from "../../src/components/activity/ActivityFilters"
-import ActivityItem from "../../src/components/activity/ActivityItem"
+import ActivityListItem from "../../src/components/activity/ActivityListItem"
 
 export default function Index() {
   return (
     <div>
       <ActivityFilters/>
-      <ActivityItem/>
+      <ActivityListItem/>
     </div>
   )
 }

@@ -1,9 +1,9 @@
-import ExploreTItle from "../../src/components/explore/ExploreTItle";
+import ExploreTitle from "../../src/components/explore/ExploreTitle";
 
 export default function index() {
   return (
     <div>
-      <ExploreTItle/>
+      <ExploreTitle/>
     </div>
   )
 }

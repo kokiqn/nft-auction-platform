@@ -1,0 +1,14 @@
+@use "../../styles/colors.scss";
+
+.activity-hero {
+  height: 40vh;
+  background-color: colors.$primary_main;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  h1 {
+    position: absolute;
+    top: 86px;
+  }
+}

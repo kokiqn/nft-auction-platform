@@ -57,7 +57,7 @@ export default function ActivityFilters({ filters }) {
         <FormControl size="medium">
           <TextField
             onChange={handleChange}
-            sx={{ background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
+            sx={{ minWidth: 340 ,background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
             id="input-with-icon-textfield"
             InputProps={{
               disableUnderline: true,

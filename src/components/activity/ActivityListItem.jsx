@@ -4,14 +4,14 @@ import Avatar from '../avatar/Avatar'
 import { Link } from "@mui/material"
 
 export default function ActivityListItem({ user, created_at, nft, type = 'like' }) {
-
+  console.log()
   return (
     <div className={styles['activity-item']}>
-      <Avatar size={60} url={user?.avatarUrl} verified={user?.verified} />
+      <Avatar size={60} url={user?.avatar?.url} verified={user?.verified} />
       <div className={styles.paragraphs}>
-        <p><strong>{user?.name}</strong> {type === 'like' ? 'liked ' : 'bought '}
+        <p><strong>{user?.username}</strong> {type === 'like' ? 'liked ' : 'bought '}
           <Link color="secondary">"{nft?.name}"</Link> by
-          <Link color="secondary"> {nft?.user?.name}</Link>
+          <Link color="secondary"> {nft?.owner?.username}</Link>
         </p>
         <p className={styles.small}>{created_at ? `${formatDistance(parseISO(created_at), new Date())} ago` : ''}</p>
       </div>

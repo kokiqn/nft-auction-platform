@@ -8,22 +8,29 @@ import How from "../src/components/how/How"
 import Auctions from "../src/components/auctions/Auctions"
 import Footer from "../src/components/footer/Footer"
 
-import dataFeatured from "../public/data/featured.json"
 import dataTrending from "../public/data/trending.json"
 import dataUsers from "../public/data/users.json"
 import dataNfts from "../public/data/nfts.json"
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
+
+  useEffect(async () => {
+    const dataFeatured = await fetch(process.env.apiUrl + '/featured')
+    .then((res) => res.json());
+
+    dataFeatured.nfts[0]["cols"] = 3;
+    dataFeatured.nfts[0]["rows"] = 2;
+    dataFeatured.nfts.map((obj, i) => obj["href"] = "/product/" + dataFeatured?.nfts[i]?.id);
+
+    setFeaturedCards(dataFeatured);
+  }, [])
+  console.log(featuredCards)
+
   const [trendingCards, setTrendingCards] = useState([]);
   const [users, setUsers] = useState([]);
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
-    dataFeatured[0]["cols"] = 3;
-    dataFeatured[0]["rows"] = 2;
-    dataFeatured.map(obj => obj["href"] = "/about");
-
-    setFeaturedCards(dataFeatured);
     setTrendingCards(dataTrending);
 
     dataUsers.sort(function (a, b) {
@@ -39,7 +46,7 @@ export default function Index() {
   return (
     <>
       <Header />
-      <Featured items={featuredCards} />
+      <Featured items={featuredCards?.nfts} />
       <Trending cards={trendingCards} />
       <TopCollectors collectors={users} />
       <How

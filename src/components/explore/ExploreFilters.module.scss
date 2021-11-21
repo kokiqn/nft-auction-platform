@@ -1,4 +1,15 @@
+@use "../../styles/colors.scss";
+
 .explore-filters {
-  display: flex;
-  justify-content: flex-end;
+   font-family: Montserrat;
+   display: flex;
+   justify-content: flex-end;
+
+   .select {
+    font-size: 0.875rem;
+    padding: 0 -2rem;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: colors.$text_hint
+  }
 }

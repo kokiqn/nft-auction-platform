@@ -8,7 +8,6 @@ import How from "../src/components/how/How"
 import Auctions from "../src/components/auctions/Auctions"
 import Footer from "../src/components/footer/Footer"
 
-import dataTrending from "../public/data/trending.json"
 import dataUsers from "../public/data/users.json"
 import dataNfts from "../public/data/nfts.json"
 
@@ -25,13 +24,22 @@ export default function Index() {
 
     setFeaturedCards(dataFeatured);
   }, [])
-  console.log(featuredCards)
 
-  const [trendingCards, setTrendingCards] = useState([]);
+  const [trendingItems, setTrendingItems] = useState([]);
+  const [trendingFilters, setTrendingFilters] = useState([]);
+
+  useEffect(async () => {
+    const dataTrending = await fetch(process.env.apiUrl + '/trending')
+    .then((res) => res.json());
+
+    setTrendingItems(dataTrending?.nfts)
+    setTrendingFilters(dataTrending?.filters?.sort)
+  }, [])
+  
+
   const [users, setUsers] = useState([]);
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
-    setTrendingCards(dataTrending);
 
     dataUsers.sort(function (a, b) {
       return b.nfts.length - a.nfts.length;
@@ -47,7 +55,7 @@ export default function Index() {
     <>
       <Header />
       <Featured items={featuredCards?.nfts} />
-      <Trending cards={trendingCards} />
+      <Trending cards={trendingItems} filters={trendingFilters} />
       <TopCollectors collectors={users} />
       <How
         title="HOW IT WORKS"

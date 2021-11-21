@@ -4,8 +4,8 @@ import { Grid, Container, Select, MenuItem, FormControl } from '@mui/material';
 
 import styles from './Trending.module.scss'
 
-export default function Trending({ cards = [] }) {
-  const [value, setValue] = useState(7);
+export default function Trending({ cards = [], filters = [] }) {
+  const [value, setValue] = useState(1);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -24,10 +24,11 @@ export default function Trending({ cards = [] }) {
               onChange={handleChange}
               autoWidth
             >
-              <MenuItem value={1}>Today</MenuItem>
-              <MenuItem value={7}>This week</MenuItem>
-              <MenuItem value={30}>This month</MenuItem>
-              <MenuItem value={365}>This year</MenuItem>
+              {filters.map(filter => {
+                return (
+                  <MenuItem value={filter.value}>{filter.label}</MenuItem>
+                )
+              })}
             </Select>
           </FormControl>
         </div>

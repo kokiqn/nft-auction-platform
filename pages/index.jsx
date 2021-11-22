@@ -8,7 +8,6 @@ import How from "../src/components/how/How"
 import Auctions from "../src/components/auctions/Auctions"
 import Footer from "../src/components/footer/Footer"
 
-import dataUsers from "../public/data/users.json"
 import dataNfts from "../public/data/nfts.json"
 
 export default function Index() {
@@ -37,15 +36,23 @@ export default function Index() {
   }, [])
   
 
-  const [users, setUsers] = useState([]);
+  const [collectors, setCollectors] = useState([]);
+  const [collectorFilters, setCollectorFilters] = useState([]);
+
+  useEffect(async () => {
+    const dataCollectors = await fetch(process.env.apiUrl + '/top-collectors')
+    .then((res) => res.json());
+
+    dataCollectors?.users.sort(function (a, b) {
+      return b.nfts.length - a.nfts.length;
+    })
+
+    setCollectors(dataCollectors?.users?.slice(0, 12));
+    setCollectorFilters(dataCollectors?.filters?.sort);
+  })
+
   const [nfts, setNfts] = useState([]);
   useEffect(() => {
-
-    dataUsers.sort(function (a, b) {
-      return b.nfts.length - a.nfts.length;
-    });
-
-    setUsers(dataUsers.slice(0, 12));
 
     dataNfts.map(nft => nft["timeLeft"] = Math.random() * 10000)
     setNfts(dataNfts);
@@ -56,7 +63,7 @@ export default function Index() {
       <Header />
       <Featured items={featuredCards?.nfts} />
       <Trending cards={trendingItems} filters={trendingFilters} />
-      <TopCollectors collectors={users} />
+      <TopCollectors collectors={collectors} filters={collectorFilters}/>
       <How
         title="HOW IT WORKS"
         description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.

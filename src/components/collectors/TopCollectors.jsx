@@ -6,8 +6,8 @@ import styles from './TopCollectors.module.scss';
 
 var chunk = require('lodash.chunk');
 
-export default function TopCollectors({ collectors = [] }) {
-  const [value, setValue] = useState(7);
+export default function TopCollectors({ collectors = [], filters }) {
+  const [value, setValue] = useState('asc');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -29,10 +29,11 @@ export default function TopCollectors({ collectors = [] }) {
             onChange={handleChange}
             autoWidth
           >
-            <MenuItem value={1}>Today</MenuItem>
-            <MenuItem value={7}>This week</MenuItem>
-            <MenuItem value={30}>This month</MenuItem>
-            <MenuItem value={365}>This year</MenuItem>
+            {filters.map((filter, i) => {
+              return (
+                <MenuItem key={i} value={filter.value} >{filter.label}</MenuItem>
+              )
+            })}
           </Select>
         </FormControl>
       </div>

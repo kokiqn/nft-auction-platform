@@ -17,7 +17,6 @@ export default function ProductContainer({
   bids,
   source,
 }) {
-  console.log(bids)
   return (
     <div className={styles['product-container']}>
       <Grid container justifyContent="center" gap={9}>

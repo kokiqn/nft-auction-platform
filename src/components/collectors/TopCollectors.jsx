@@ -18,7 +18,7 @@ export default function TopCollectors({ collectors = [], filters }) {
   const split = chunk(collectors, 3);
 
   return (
-    <Container maxWidth="xl" className={styles.container}>
+    <Container maxWidth="xl" disableGutters className={styles.container}>
       <div className={styles.header}>
         <h1 style={{ fontFamily: "Gill Sans MT" }}>Top Collectors</h1>
         <FormControl sx={{ minWidth: 120 }}>

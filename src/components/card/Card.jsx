@@ -22,8 +22,6 @@ export default function Card({
   timeLeft,
 }) {
 
-  console.log(typeof(timeLeft))
-
   const [live, setLive] = useState(false);
   const [time, setTime] = useState(timeLeft);
 

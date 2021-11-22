@@ -8,13 +8,11 @@ import How from "../src/components/how/How"
 import Auctions from "../src/components/auctions/Auctions"
 import Footer from "../src/components/footer/Footer"
 
-import dataNfts from "../public/data/nfts.json"
-
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
 
   useEffect(async () => {
-    const dataFeatured = await fetch(process.env.apiUrl + '/featured')
+    const dataFeatured = await fetch(process.env.apiUrl + '/' + 'featured')
     .then((res) => res.json());
 
     dataFeatured.nfts[0]["cols"] = 3;
@@ -28,19 +26,18 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState([]);
 
   useEffect(async () => {
-    const dataTrending = await fetch(process.env.apiUrl + '/trending')
+    const dataTrending = await fetch(process.env.apiUrl + '/' + 'trending')
     .then((res) => res.json());
 
     setTrendingItems(dataTrending?.nfts)
     setTrendingFilters(dataTrending?.filters?.sort)
   }, [])
   
-
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
 
   useEffect(async () => {
-    const dataCollectors = await fetch(process.env.apiUrl + '/top-collectors')
+    const dataCollectors = await fetch(process.env.apiUrl + '/' + 'top-collectors')
     .then((res) => res.json());
 
     dataCollectors?.users.sort(function (a, b) {
@@ -49,13 +46,18 @@ export default function Index() {
 
     setCollectors(dataCollectors?.users?.slice(0, 12));
     setCollectorFilters(dataCollectors?.filters?.sort);
-  })
+  }, [])
 
-  const [nfts, setNfts] = useState([]);
-  useEffect(() => {
+  const [auctions, setAuctions] = useState([]);
+  const [auctionFilters, setAuctionFilters] = useState([]);
 
-    dataNfts.map(nft => nft["timeLeft"] = Math.random() * 10000)
-    setNfts(dataNfts);
+  useEffect(async () => {
+    const dataAuction = await fetch(process.env.apiUrl + '/' + 'live-auctions')
+    .then((res) => res.json());
+
+    dataAuction?.nfts?.map(nft => nft["timeLeft"] = Math.random() * 10000)
+    setAuctions(dataAuction.nfts)
+    setAuctionFilters(dataAuction.filters.price)
   }, [])
 
   return (
@@ -69,7 +71,7 @@ export default function Index() {
         description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam."
       />
-      <Auctions cards={nfts} />
+      <Auctions cards={auctions} filters={auctionFilters}/>
       <Footer />
     </>
   )

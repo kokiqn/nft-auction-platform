@@ -22,6 +22,8 @@ export default function Card({
   timeLeft,
 }) {
 
+  console.log(typeof(timeLeft))
+
   const [live, setLive] = useState(false);
   const [time, setTime] = useState(timeLeft);
 
@@ -75,15 +77,11 @@ export default function Card({
       units: ['', 'k', 'M', 'B'],
       precision: 2
     });
-
   }
-  function liveStyle() {
-    return { backgroundColor: "#0D231B" };
-  };
 
   return (
     <div>
-      <CardContainer className={styles.card} sx={live ? liveStyle : null}>
+      <CardContainer className={`${styles.card} ${live ? styles.live : ''}`}>
         <CardHeader
           className={styles.header}
           avatar={<Avatar

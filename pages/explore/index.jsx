@@ -7,7 +7,20 @@ import nftData from "../../public/data/nfts.json"
 
 import { Grid, Container } from "@mui/material"
 
+import { useState, useEffect } from "react";
+
 export default function index() {
+  const [nfts, setNfts] = useState([])
+  const [nftFilters, setNftFilters] = useState([])
+
+  useEffect(async () => {
+    const dataNft = await fetch(process.env.apiUrl + '/' + 'explore')
+    .then((res) => res.json())
+
+    setNfts(dataNft?.nfts)
+    setNftFilters(dataNft?.filters)
+  }, [])
+
   return (
     <div>
       <Header />
@@ -17,11 +30,11 @@ export default function index() {
             <ExploreTitle text="Explore" />
           </Grid>
           <Grid item xs={9}>
-            <ExploreFilters />
+            <ExploreFilters filters={nftFilters} />
           </Grid>
         </Grid>
         <Grid container justifyContent="center" spacing={2} paddingTop={3.265}>
-          {nftData?.map((item, i) => {
+          {nfts?.map((item, i) => {
             return (
               <Grid item>
                 <Card

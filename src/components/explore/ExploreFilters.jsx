@@ -1,10 +1,10 @@
 import styles from "./ExploreFilters.module.scss"
 import { useState } from 'react'
-import exploreData from "../../../public/data/filtersExplore.json"
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function ExploreFilters({ filters = exploreData }) {
+export default function ExploreFilters({ filters = [] }) {
+  console.log(filters)
   const [input, setInput] = useState('');
   const [valueSort, setValueSort] = useState('');
   const [valuePrice, setvaluePrice] = useState('');
@@ -34,7 +34,7 @@ export default function ExploreFilters({ filters = exploreData }) {
             color="primary"
             value={valueSort}
             onChange={handleSort}>
-            {filters?.sort?.map((item, i) => {
+            {filters['sort'].map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>

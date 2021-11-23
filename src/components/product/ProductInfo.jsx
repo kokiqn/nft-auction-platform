@@ -19,6 +19,7 @@ export default function ProductInfo({
   timeEnd,
   isLive,
 }) {
+  console.log(creator)
   return (
     <div className={styles["product-info"]}>
       <ProductInfoTitle text={title} />
@@ -37,7 +38,8 @@ export default function ProductInfo({
         <Grid item xs={7}>
           <ProductInfoCreator
           name={creator?.username}
-          avatar={creator?.avatar?.formats?.thumbnail?.url}
+          avatar={creator?.avatar?.url}
+          verified={creator?.verified}
           />
         </Grid>
         <Grid item xs={5}>

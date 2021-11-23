@@ -8,7 +8,7 @@ export default function Featured({ items = [] }) {
   const router = useRouter()
 
   return (
-    <Container className={styles.container} maxWidth="xl">
+    <Container disableGutters className={styles.container} maxWidth="xl">
       <ImageList
         sx={{ width: "max", height: "max", padding: 1 }}
         variant="quilted"

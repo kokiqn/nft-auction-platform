@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function ExploreFilters({ filters = [] }) {
+export default function ExploreFilters({ filters }) {
   console.log(filters)
   const [input, setInput] = useState('');
   const [valueSort, setValueSort] = useState('');
@@ -34,7 +34,7 @@ export default function ExploreFilters({ filters = [] }) {
             color="primary"
             value={valueSort}
             onChange={handleSort}>
-            {filters['sort'].map((item, i) => {
+            {filters[0]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>
@@ -49,7 +49,7 @@ export default function ExploreFilters({ filters = [] }) {
             color="primary"
             value={valuePrice}
             onChange={handlePrice}>
-            {filters?.price?.map((item, i) => {
+            {filters[1]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>

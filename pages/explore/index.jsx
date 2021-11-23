@@ -18,7 +18,7 @@ export default function index() {
     .then((res) => res.json())
 
     setNfts(dataNft?.nfts)
-    setNftFilters(dataNft?.filters)
+    setNftFilters([dataNft?.filters?.sort, dataNft?.filters?.price])
   }, [])
 
   return (

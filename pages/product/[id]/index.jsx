@@ -17,7 +17,6 @@ export default function Index() {
 
     setProduct(dataProduct)
   }, [productId])
-  console.log(product)
 
   return (
     <div>

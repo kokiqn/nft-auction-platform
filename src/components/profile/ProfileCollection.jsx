@@ -4,6 +4,7 @@ import ProfileCollectionFilters from "../profile/ProfileCollectionFilters"
 import Card from "../card/Card"
 
 export default function ProfileCollection({ user, filters, items }) {
+  console.log(filters)
   return (
     <div className={styles['profile-collection']}>
       <Container maxWidth="xl">
@@ -15,7 +16,7 @@ export default function ProfileCollection({ user, filters, items }) {
             <ProfileCollectionFilters filters={filters} />
           </Grid>
         </Grid>
-        <Grid container paddingTop={3.5} spacing={2}>
+        <Grid container paddingTop={3.5} spacing={2} justifyContent="center">
           {items?.map((card, i) => {
             return (
               <Grid key={i} item xs={3}>

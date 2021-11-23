@@ -12,11 +12,11 @@ export default function Index() {
   
   const [product, setProduct] = useState([])
   useEffect(async () => {
-    const dataProduct = await fetch(process.env.apiUrl + '/' + 'nfts' + '/' + productId)
+    const dataProduct = await fetch(process.env.apiUrl + '/' + 'nfts/' + productId)
     .then((res) => res.json())
 
     setProduct(dataProduct)
-  }, [])
+  }, [productId])
   console.log(product)
 
   return (

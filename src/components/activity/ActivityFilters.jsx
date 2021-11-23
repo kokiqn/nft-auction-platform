@@ -34,7 +34,7 @@ export default function ActivityFilters({ filters }) {
             color="primary"
             value={valueSort}
             onChange={handleSort}>
-            {filters?.sort?.map((item, i) => {
+            {filters[0]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>
@@ -49,7 +49,7 @@ export default function ActivityFilters({ filters }) {
             color="primary"
             value={valueType}
             onChange={handlePrice}>
-            {filters?.type?.map((item, i) => {
+            {filters[1]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>

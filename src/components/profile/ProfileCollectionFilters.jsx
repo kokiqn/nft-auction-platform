@@ -34,7 +34,7 @@ export default function ProfileCollectionFilters({ filters }) {
             color="primary"
             value={valueSort}
             onChange={handleSort}>
-            {filters?.sort?.map((item, i) => {
+            {filters[0]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>
@@ -49,7 +49,7 @@ export default function ProfileCollectionFilters({ filters }) {
             color="primary"
             value={valuePrice}
             onChange={handlePrice}>
-            {filters?.price?.map((item, i) => {
+            {filters[1]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
           </Select>

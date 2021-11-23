@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import data from '../../../public/data/filtersActivity.json'
 import styles from './ActivityFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';

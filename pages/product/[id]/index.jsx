@@ -9,27 +9,15 @@ import { useState, useEffect } from "react";
 export default function Index() {
   const router = useRouter()
   const productId = router.query.id
-  let nft
-  let nftId
   
   const [product, setProduct] = useState([])
   useEffect(async () => {
-    const dataProduct = await fetch(process.env.apiUrl + '/' + 'nfts')
+    const dataProduct = await fetch(process.env.apiUrl + '/' + 'nfts' + '/' + productId)
     .then((res) => res.json())
 
-    for (let i = 0; i < dataProduct.length; i++) {
-      if(productId == dataProduct[i].id) {
-        setProduct(dataProduct[i])
-      }
-    }
+    setProduct(dataProduct)
   }, [])
-
-  for (let i = 0; i < nftData.length; i++) {
-    if(productId == nftData[i].id) {
-      nftId = nftData[i].id
-      nft = nftData[i]
-    }
-  }
+  console.log(product)
 
   return (
     <div>

@@ -3,23 +3,12 @@ import { useState } from 'react'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function ExploreFilters({ filters }) {
-  console.log(filters)
+export default function ExploreFilters({ filters, onChangeSort, onChangePrice, valueSort, valuePrice }) {
   const [input, setInput] = useState('');
-  const [valueSort, setValueSort] = useState('');
-  const [valuePrice, setvaluePrice] = useState('');
 
   function handleChange(e) {
     setInput(e.target.value);
   }
-
-  function handleSort(e) {
-    setValueSort(e.target.value);
-  };
-
-  function handlePrice(e) {
-    setvaluePrice(e.target.value);
-  };
 
   return (
     <div className={styles['explore-filters']}>
@@ -33,7 +22,7 @@ export default function ExploreFilters({ filters }) {
             variant="outlined"
             color="primary"
             value={valueSort}
-            onChange={handleSort}>
+            onChange={onChangeSort}>
             {filters[0]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
@@ -48,7 +37,7 @@ export default function ExploreFilters({ filters }) {
             variant="outlined"
             color="primary"
             value={valuePrice}
-            onChange={handlePrice}>
+            onChange={onChangePrice}>
             {filters[1]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
@@ -59,6 +48,7 @@ export default function ExploreFilters({ filters }) {
             onChange={handleChange}
             sx={{ minWidth: 340, background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
             id="input-with-icon-textfield"
+            value={input}
             InputProps={{
               disableUnderline: true,
               startAdornment: (

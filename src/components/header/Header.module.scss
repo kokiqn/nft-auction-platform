@@ -1,15 +1,8 @@
 @use "../../styles/colors";
-$text_primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
 
 .wrapper {
   padding: 20px;
   background-color: colors.$background_paper;
-}
-
-.container {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .box {
@@ -23,15 +16,24 @@ $text_primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
 }
 
 .box label, .box label:active, .box input {
-  color: white !important;
-  font-family: $text_primary;
+  color: colors.$text_hint !important;
+  font-family: colors.$font_primary;
 }
 
-.button, .buttonLast {
-  color: white !important;
-  font-family: $text_primary;
+.button-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  color: colors.$text_hint !important;
+  font-family: colors.$font_primary !important;
+  font-weight: 600;
+  text-transform: none !important;
 }
 
 .buttonLast {
+  color: white !important;
   background-color: colors.$primary_main !important;
+  font-weight: 700 !important;
 }

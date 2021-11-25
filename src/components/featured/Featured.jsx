@@ -17,7 +17,7 @@ export default function Featured({ items = [] }) {
         gap={20}
       >
         {items.map((item) => (
-          <ImageListItem key={item.image} cols={item.cols || 1} rows={item.rows || 1}>
+          <ImageListItem key={item.image} cols={screen.width <= 700 ? 6 : item.cols || 1} rows={screen.width <= 700 ? 1.5 : item.rows || 1}>
             <img
               onClick={() => router.push(item.href)}
               className={styles.item}

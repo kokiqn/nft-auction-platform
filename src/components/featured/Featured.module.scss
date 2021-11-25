@@ -10,3 +10,9 @@
  .item:hover {
   transform: scale(1.03);
 }
+
+@media (max-width: 1000px) {
+  .item {
+    width: 100% !important;
+  }
+}

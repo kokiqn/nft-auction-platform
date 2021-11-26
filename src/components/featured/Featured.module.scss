@@ -1,5 +1,6 @@
 .container {
   margin: 4rem auto;
+  padding: 0 .9rem;
 }
 
 .item {
@@ -9,4 +10,16 @@
 
  .item:hover {
   transform: scale(1.03);
+}
+
+@media (max-width: 1000px) {
+  .item {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin-top: 0;
+  }
 }

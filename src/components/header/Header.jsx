@@ -16,15 +16,15 @@ export default function Header() {
 
   return (
     <div className={styles.wrapper}>
-      <Container className={styles.container} maxWidth="xl">
+      <Container className={styles.container} maxWidth="xl" disableGutters>
         <Grid container
-        justifyContent="space-between"
         alignItems="center"
+        spacing={{xs: 1}}
         >
-          <Grid item>
+          <Grid item md={2}>
             <Logo />
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={5}>
             <Box className={styles.box}>
               <SearchIcon sx={{ color: 'smoke', mr: 1, my: 0.5, fontSize: 20 }} />
               <TextField
@@ -36,18 +36,18 @@ export default function Header() {
                 InputProps={{ disableUnderline: true }} />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={11} sm={4} md={5} className={styles['button-wrapper']}> 
             <Button
-              size="medium"
+              size="small"
               className={styles.button}
             >Home</Button>
             <Button
               className={styles.button}
-              size="medium"
+              size="small"
             >Activity</Button>
             <Button
               className={styles.buttonLast}
-              size="medium"
+              size="large"
             >Explore</Button>
           </Grid>
         </Grid>

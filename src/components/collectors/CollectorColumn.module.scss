@@ -1,7 +1,7 @@
 @use "../../styles/colors";
 
 .container {
-  max-width: max-content;
+  max-width: 370px;
   background-color: rgba(colors.$primary_main, 15%);
   border-radius: 10px;
 }

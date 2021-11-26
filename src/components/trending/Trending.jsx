@@ -35,7 +35,7 @@ export default function Trending({ cards = [], filters = [] }) {
         <Grid container spacing={1} justifyContent="center">
           {cards.map((card, key) => {
             return (
-              <Grid key={key} item xs={12} sm={3}>
+              <Grid key={key} item xs={12} sm={6} lg={3}>
                 <Card
                   {...card}
                   mediaUrl={card.source.url}

@@ -28,7 +28,7 @@ export default function Index() {
 
     setProfile(dataProfile?.user)
     setProfileFilters([dataProfile?.filters?.sort, dataProfile?.filters?.price])
-  }, [profileId])
+  }, [profileId, valueSort, valuePrice])
 
   const userData = {
     avatarUrl: profile?.avatar?.url,

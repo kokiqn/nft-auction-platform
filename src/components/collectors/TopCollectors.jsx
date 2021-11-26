@@ -1,4 +1,4 @@
-import { Container, FormControl, Grid, MenuItem, Select } from "@mui/material"
+import { Container, FormControl, Grid, InputLabel, MenuItem, Select } from "@mui/material"
 import { useState } from "react";
 import CollectorColumn from "./CollectorColumn"
 
@@ -6,27 +6,22 @@ import styles from './TopCollectors.module.scss';
 
 var chunk = require('lodash.chunk');
 
-export default function TopCollectors({ collectors = [], filters }) {
-  const [value, setValue] = useState('asc');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  collectors.map((i, k) => i.id = (k + 1));
+export default function TopCollectors({ collectors = [], filters, onChange, value }) {
   
+  collectors.map((i, k) => i.id = (k + 1));
   const split = chunk(collectors, 3);
 
   return (
     <Container maxWidth="xl" disableGutters className={styles.container}>
       <div className={styles.header}>
-        <h1 style={{ fontFamily: "Gill Sans MT" }}>Top Collectors</h1>
+        <h1 style={{ fontFamily: "Montserrat" }}>Top Collectors</h1>
         <FormControl sx={{ minWidth: 120 }}>
+          <InputLabel id="sort-select" shrink={false}>{value == '' && 'Sort by'}</InputLabel>
           <Select
-            sx={{ fontFamily: "Gill Sans MT", color: "#e1e1fc", fill: "#e1e1fc" }}
+            sx={{ fontFamily: "Montserrat", color: "#e1e1fc", fill: "#e1e1fc" }}
             id="demo-simple-select"
             value={value}
-            onChange={handleChange}
+            onChange={onChange}
             autoWidth
           >
             {filters.map((filter, i) => {

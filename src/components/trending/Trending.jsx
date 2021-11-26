@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Card from '../card/Card'
-import { Grid, Container, Select, MenuItem, FormControl } from '@mui/material';
+import { Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 
 import styles from './Trending.module.scss'
 
@@ -9,10 +9,11 @@ export default function Trending({ cards = [], filters = [], onChange, value }) 
     <div className={styles.container}>
       <Container maxWidth="xl">
         <div className={styles.header}>
-          <h1 style={{ fontFamily: "Gill Sans MT" }}>Trending</h1>
+          <h1 style={{ fontFamily: "Montserrat" }}>Trending</h1>
           <FormControl sx={{ minWidth: 120 }}>
+            <InputLabel id="sort-select" shrink={false}>{value == '' && 'Sort by'}</InputLabel>
             <Select
-              sx={{ fontFamily: "Gill Sans MT", color: "#e1e1fc", fill: "#e1e1fc" }}
+              sx={{ fontFamily: "Montserrat", color: "#e1e1fc", fill: "#e1e1fc" }}
               id="demo-simple-select"
               value={value}
               onChange={onChange}
@@ -33,7 +34,7 @@ export default function Trending({ cards = [], filters = [], onChange, value }) 
                 <Card
                   {...card}
                   mediaUrl={card.source.url}
-                  user={{avatarUrl: card.owner.avatar.url, verified: card.owner.verified}}
+                  user={{ avatarUrl: card.owner.avatar.url, verified: card.owner.verified }}
                 />
               </Grid>
             )

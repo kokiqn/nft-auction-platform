@@ -39,30 +39,34 @@ export default function Index() {
 
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
+  const [valueFilterCollectors, setValueFilterCollectors] = useState('')
+
+  const handleChangeCollectors = ((e) => setValueFilterCollectors(e.target.value))
 
   useEffect(async () => {
-    const dataCollectors = await fetch(process.env.apiUrl + '/' + 'top-collectors')
+    const dataCollectors = await fetch(process.env.apiUrl + '/top-collectors'
+      + (valueFilterCollectors != "" ? `?sort=${valueFilterCollectors}` : ''))
       .then((res) => res.json());
-
-    dataCollectors?.users.sort(function (a, b) {
-      return b.nfts.length - a.nfts.length;
-    })
 
     setCollectors(dataCollectors?.users?.slice(0, 12));
     setCollectorFilters(dataCollectors?.filters?.sort);
-  }, [])
+  }, [valueFilterCollectors])
 
   const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
+  const [valueFilterAuctions, setValueFilterAuctions] = useState('')
+
+  const handleChangeAuctions = ((e) => setValueFilterAuctions(e.target.value))
 
   useEffect(async () => {
-    const dataAuction = await fetch(process.env.apiUrl + '/' + 'live-auctions')
+    const dataAuction = await fetch(process.env.apiUrl + '/live-auctions'
+      + (valueFilterAuctions != "" ? `?sort=${valueFilterAuctions}` : ''))
       .then((res) => res.json());
 
     dataAuction?.nfts?.map(nft => nft["timeLeft"] = Math.random() * 10000)
-    setAuctions(dataAuction.nfts)
-    setAuctionFilters(dataAuction.filters.price)
-  }, [])
+    setAuctions(dataAuction?.nfts)
+    setAuctionFilters(dataAuction.filters?.price)
+  }, [valueFilterAuctions])
 
   return (
     <>
@@ -74,13 +78,23 @@ export default function Index() {
         onChange={handleChangeTrending}
         value={valueFilterTrending}
       />
-      <TopCollectors collectors={collectors} filters={collectorFilters} />
+      <TopCollectors
+        collectors={collectors}
+        filters={collectorFilters}
+        onChange={handleChangeCollectors}
+        value={valueFilterCollectors}
+      />
       <How
         title="HOW IT WORKS"
         description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam.
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dolorum, repellat possimus hic nulla aliquam."
       />
-      <Auctions cards={auctions} filters={auctionFilters} />
+      <Auctions
+        cards={auctions}
+        filters={auctionFilters}
+        onChange={handleChangeAuctions}
+        value={valueFilterAuctions}
+      />
       <Footer />
     </>
   )

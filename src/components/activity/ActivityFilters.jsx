@@ -3,22 +3,12 @@ import styles from './ActivityFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function ActivityFilters({ filters }) {
+export default function ActivityFilters({ filters, onChangeSort, onChangeType, valueSort, valueType }) {
   const [input, setInput] = useState('');
-  const [valueSort, setValueSort] = useState('');
-  const [valueType, setvalueType] = useState('');
 
   function handleChange(e) {
     setInput(e.target.value);
   }
-
-  function handleSort(e) {
-    setValueSort(e.target.value);
-  };
-
-  function handlePrice(e) {
-    setvalueType(e.target.value);
-  };
 
   return (
     <div className={styles['activity-filters']}>
@@ -32,7 +22,7 @@ export default function ActivityFilters({ filters }) {
             variant="outlined"
             color="primary"
             value={valueSort}
-            onChange={handleSort}>
+            onChange={onChangeSort}>
             {filters[0]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
@@ -47,7 +37,7 @@ export default function ActivityFilters({ filters }) {
             variant="outlined"
             color="primary"
             value={valueType}
-            onChange={handlePrice}>
+            onChange={onChangeType}>
             {filters[1]?.map((item, i) => {
               return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
             })}
@@ -58,6 +48,7 @@ export default function ActivityFilters({ filters }) {
             onChange={handleChange}
             sx={{ minWidth: 340 ,background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
             id="input-with-icon-textfield"
+            value={input}
             InputProps={{
               disableUnderline: true,
               startAdornment: (

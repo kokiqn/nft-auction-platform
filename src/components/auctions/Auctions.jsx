@@ -1,27 +1,22 @@
 import { useState } from 'react'
 import Card from '../card/Card'
-import { Grid, Container, Select, MenuItem, FormControl } from '@mui/material';
+import { Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 
 import styles from './Auctions.module.scss'
 
-export default function Auctions({ cards = [], filters }) {
-  const [value, setValue] = useState(1);
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+export default function Auctions({ cards = [], filters, onChange, value }) {
   return (
     <div className={styles.container}>
       <Container maxWidth="xl">
         <div className={styles.header}>
-          <h1 style={{ fontFamily: "Gill Sans MT" }}>🔥 Live Auctions</h1>
+          <h1 style={{ fontFamily: "Montserrat" }}>🔥 Live Auctions</h1>
           <FormControl sx={{ minWidth: 120 }}>
+          <InputLabel id="sort-select" shrink={false}>{value == '' && 'Sort by'}</InputLabel>
             <Select
-              sx={{ fontFamily: "Gill Sans MT", color: "#e1e1fc", fill: "#e1e1fc" }}
+              sx={{ fontFamily: "Montserrat", color: "#e1e1fc", fill: "#e1e1fc" }}
               id="demo-simple-select"
               value={value}
-              onChange={handleChange}
+              onChange={onChange}
               autoWidth
             >
               {filters?.map((filter, i) => {

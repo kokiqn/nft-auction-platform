@@ -16,12 +16,12 @@ export default function Index() {
 
   useEffect(async () => {
     const dataActivity = await fetch(process.env.apiUrl + '/activities' + '?' +
-      (valueSort != "" ? `sort=${valueSort}` : '') + '&' + (valueType != "" ? `Type=${valueType}` : ''))
+      (valueSort != "" ? `sort=${valueSort}` : '') + '&' + (valueType != "" ? `type=${valueType}` : ''))
       .then((res) => res.json())
 
     setActivity(dataActivity?.activities)
     setActivityFilters([dataActivity?.filters?.sort, dataActivity?.filters?.type])
-  }, [])
+  }, [valueSort, valueType])
 
   return (
     <div>

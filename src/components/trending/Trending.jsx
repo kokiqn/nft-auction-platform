@@ -4,13 +4,7 @@ import { Grid, Container, Select, MenuItem, FormControl } from '@mui/material';
 
 import styles from './Trending.module.scss'
 
-export default function Trending({ cards = [], filters = [] }) {
-  const [value, setValue] = useState(1);
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+export default function Trending({ cards = [], filters = [], onChange, value }) {
   return (
     <div className={styles.container}>
       <Container maxWidth="xl">
@@ -21,7 +15,7 @@ export default function Trending({ cards = [], filters = [] }) {
               sx={{ fontFamily: "Gill Sans MT", color: "#e1e1fc", fill: "#e1e1fc" }}
               id="demo-simple-select"
               value={value}
-              onChange={handleChange}
+              onChange={onChange}
               autoWidth
             >
               {filters.map(filter => {

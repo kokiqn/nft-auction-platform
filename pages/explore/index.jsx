@@ -17,33 +17,12 @@ export default function index() {
   const handleChangeSort = ((e) => setValueSort(e.target.value))
   const handleChangePrice = ((e) => setValuePrice(e.target.value))
 
-  const dateAscending = ((a, b) => a?.created_at?.localeCompare(b?.created_at))
-  const dateDescending = ((a, b) => b?.created_at?.localeCompare(a?.created_at))
-
-  const nameAscending = ((a, b) => a?.name?.localeCompare(b?.name))
-  const nameDescending = ((a, b) => b?.name?.localeCompare(a?.name))
-
-  const priceAscending = ((a, b) => a?.price - b?.price)
-  const priceDescending = ((a, b) => b?.price - a?.price)
-
-  const priceFilterLeast = (item => item?.price <= 0.1)
-  const priceFilterMiddle = (item => item?.price <= 0.4)
-  const priceFilterMost = (item => item?.price <= 0.7)
-
-  const functionArr = [dateAscending, dateDescending, nameAscending, nameDescending,
-     priceAscending, priceDescending, priceFilterLeast, priceFilterMiddle, priceFilterMost]
-
   useEffect(async () => {
-    const dataNft = await fetch(process.env.apiUrl + '/' + 'explore')
+    const dataNft = await fetch(process.env.apiUrl + '/explore' + '?' +
+      (valueSort != "" ? `sort=${valueSort}` : '') + '&' + (valuePrice != "" ? `price=${valuePrice}` : ''))
       .then((res) => res.json())
 
-    let filtered
-    for (let i = 0; i < functionArr.length; i++) {
-      if (valuePrice == i + 1) filtered = dataNft?.nfts?.filter(functionArr[i])
-      if (valueSort == i + 1) dataNft?.nfts.sort(functionArr[i])
-    }
-
-    setNfts(valuePrice == "" ? dataNft?.nfts : filtered)
+    setNfts(dataNft?.nfts)
     setNftFilters([dataNft?.filters?.sort, dataNft?.filters?.price])
   }, [valueSort, valuePrice])
 

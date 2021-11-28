@@ -5,16 +5,9 @@ import styles from './How.module.scss'
 
 export default function How({ description, title, items = [...itemData], link }) {
   return (
-    <div>
-      <Container
-        className={styles.container}
-        maxWidth="xl"
-      >
-        <Grid
-          container
-          spacing={3}
-          direction="column"
-          justifyContent="center">
+    <div className={styles.wrapper}>
+      <Container className={styles.container} maxWidth="xl">
+        <Grid container spacing={3} className={styles['text-container']}>
           <Grid item>
             <h1>{title}</h1>
           </Grid>
@@ -22,17 +15,12 @@ export default function How({ description, title, items = [...itemData], link })
             <p>{description}</p>
           </Grid>
           <Grid item>
-            <Button
-              variant="contained">
+            <Button variant="contained">
               <a href={link}>Learn More</a>
             </Button>
           </Grid>
         </Grid>
-        <Grid
-          container
-          className={styles.steps}
-          direction="column"
-        >
+        <Grid container className={styles.steps} direction="column">
           {items.map((card, key) => {
             return (
               <Grid key={key} item xs={12} sm={3}>

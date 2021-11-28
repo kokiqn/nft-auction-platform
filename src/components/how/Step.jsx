@@ -7,9 +7,7 @@ export default function Step ({ number, title, description }) {
   return (
     <Container className={styles.container}>
       <h1>{number}</h1>
-      <Grid 
-      container
-      paddingLeft={3}>
+      <Grid container paddingLeft={3}>
         <Grid item>
           <h3>{title}</h3>
         </Grid>

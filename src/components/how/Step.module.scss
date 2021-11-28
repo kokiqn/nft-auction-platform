@@ -12,10 +12,20 @@
   h1 {    
     background-color: rgba(colors.$primary_main, 10%);
   }
-
-  
 }
 
 .container:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 500px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 320px !important;
+  }
 }

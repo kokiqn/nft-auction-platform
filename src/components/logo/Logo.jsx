@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from "../link/Link"
 
 function Logo ({ type = "default" }) {
   const defaultLogo = '/images/logo.svg';
@@ -6,7 +6,7 @@ function Logo ({ type = "default" }) {
 
   return (
     <>
-      <img src={type == 'muted' ? mutedLogo : defaultLogo} alt="logo" />
+      <Link href="/"><img src={type == 'muted' ? mutedLogo : defaultLogo} alt="logo" /></Link>
     </>
   )
 }

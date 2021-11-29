@@ -12,3 +12,9 @@
   align-items: center;
   text-align: center;
 }
+
+@media (max-width: 900px) {
+  .profile-user h3 {
+    font-size: 2rem;
+  }
+}

@@ -7,11 +7,11 @@ export default function ProfileCollection({ user, filters, items, functions }) {
   return (
     <div className={styles['profile-collection']}>
       <Container maxWidth="xl">
-        <Grid container alignItems="center">
-          <Grid item xs={3}>
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid item xs={10} md={3}>
             <Typography variant="h3" fontSize={48}>Collection</Typography>
           </Grid>
-          <Grid item xs={9} >
+          <Grid item xs={10} md={9}>
             <ProfileCollectionFilters 
             filters={filters}
             onChangeSort={functions[0]}
@@ -24,7 +24,7 @@ export default function ProfileCollection({ user, filters, items, functions }) {
         <Grid container paddingTop={3.5} spacing={2} justifyContent="center">
           {items?.map((card, i) => {
             return (
-              <Grid key={i} item xs={3}>
+              <Grid key={i} item xs={12} sm={6} lg={3}>
                 <Card
                   user={user}
                   mediaUrl={card?.source?.formats?.thumbnail?.url} {...card}

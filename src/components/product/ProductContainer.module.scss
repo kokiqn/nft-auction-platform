@@ -2,3 +2,9 @@
   max-width: 1400px;
   margin: 5rem auto;
 }
+
+@media (max-width: 1000px) {
+  .product-container {
+    margin: 3rem auto;
+  }
+}

@@ -19,11 +19,11 @@ export default function ProductContainer({
 }) {
   return (
     <div className={styles['product-container']}>
-      <Grid container justifyContent="center" gap={9}>
-        <Grid item xs={6}>
+      <Grid container justifyContent="center" gap={{sm: 4, lg: 9}}>
+        <Grid item xs={10} md={5}>
           <ProductImage url={source?.url} />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={11} md={6}>
           <ProductInfo
             title={name}
             creator={owner}

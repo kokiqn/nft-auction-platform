@@ -5,7 +5,7 @@ import styles from './User.module.scss';
 
 export default function User({ name = '', info = '', avatar = '', size = 55, verified = false}) {
   return (
-    <div className={styles.user} style={{ height: 55 }}>
+    <div className={styles.user}>
       <Avatar url={avatar} size={size} verified={verified}/>
       <div>
         <p className={styles.name}>{name}</p>

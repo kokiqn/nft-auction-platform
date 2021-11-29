@@ -34,15 +34,15 @@ export default function ProductInfo({
           <ProductInfoLikes amount={likes} />
         </Stack>
       </Stack>
-      <Grid container alignItems="center">
-        <Grid item xs={7}>
+      <Grid container spacing={{sm: 1}} alignItems="center" justifyContent="center">
+        <Grid item xs={10} sm={7}>
           <ProductInfoCreator
           name={creator?.username}
           avatar={creator?.avatar?.url}
           verified={creator?.verified}
           />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={10} sm={5}>
           <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={onTimeEnd} />
         </Grid>
       </Grid>

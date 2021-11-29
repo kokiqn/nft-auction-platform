@@ -7,7 +7,7 @@ export default function ActivityListItem({ user, created_at, nft, type = 'like' 
   console.log()
   return (
     <div className={styles['activity-item']}>
-      <Avatar size={60} url={user?.avatar?.url} verified={user?.verified} />
+      <Avatar size={screen.width < 1024 ? 45 : 60} url={user?.avatar?.url} verified={user?.verified} />
       <div className={styles.paragraphs}>
         <p><strong>{user?.username}</strong> {type === 'like' ? 'liked ' : 'bought '}
           <Link color="secondary">"{nft?.name}"</Link> by

@@ -12,7 +12,7 @@ export default function ActivityFilters({ filters, onChangeSort, onChangeType, v
 
   return (
     <div className={styles['activity-filters']}>
-      <Stack direction="row" spacing={2}>
+      <Stack direction={{xs: "column", md: "row"}} spacing={2}>
         <FormControl sx={{ minWidth: 220 }}>
           <InputLabel id="sort-select" shrink={false}>{valueSort == '' && 'Sort by'}</InputLabel>
           <Select

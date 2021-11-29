@@ -8,21 +8,33 @@
   padding: 1.2rem 1.7rem;
   border-radius: 15px;
 
-  .activity-item img {
-    max-width: 50px;
-  }
-
   .paragraphs {
     margin-left: 2.3rem;
-    line-height: .8rem;
+    line-height: 0.8rem;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.3px;
-    color: colors.$text_hint;    
+    color: colors.$text_hint;
 
     .small {
       font-size: 0.875rem;
       font-weight: 400;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .activity-item {
+    width: 90vw;
+    padding: 0.2rem 1.5rem;
+
+    .paragraphs {
+      font-size: 0.875rem;
+      line-height: 1rem;
+
+      .small {
+        font-size: .7rem;
+      }
     }
   }
 }

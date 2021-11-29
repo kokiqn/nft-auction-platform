@@ -1,4 +1,5 @@
 import Link from "../link/Link"
+import styles from './Logo.module.scss'
 
 function Logo ({ type = "default" }) {
   const defaultLogo = '/images/logo.svg';
@@ -6,7 +7,7 @@ function Logo ({ type = "default" }) {
 
   return (
     <>
-      <Link href="/"><img src={type == 'muted' ? mutedLogo : defaultLogo} alt="logo" /></Link>
+      <Link href="/"><img className={styles.logo} src={type == 'muted' ? mutedLogo : defaultLogo} alt="logo" /></Link>
     </>
   )
 }

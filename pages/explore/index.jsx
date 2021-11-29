@@ -50,6 +50,13 @@ export default function index() {
               <Grid key={i} item>
                 <Card
                   {...item}
+                  id={item.id}
+                  mediaUrl={item.source.url}
+                  user={{
+                    avatarUrl: item.owner.avatar.url,
+                    verified: item.owner.verified,
+                    profile: item.owner.id
+                  }}
                 />
               </Grid>
             )

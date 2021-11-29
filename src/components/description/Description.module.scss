@@ -3,7 +3,7 @@
 .description {
   margin: 0 auto;
   position: relative;
-  bottom: 120px;
+  bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,5 +31,11 @@
 @media (max-width: 520px) {
   .description {
     padding: 1rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .description {
+    margin: 3rem auto;
   }
 }

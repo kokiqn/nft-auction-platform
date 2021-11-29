@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Card from '../card/Card'
 import { Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 
@@ -35,7 +34,11 @@ export default function Trending({ cards = [], filters = [], onChange, value }) 
                   {...card}
                   id={card.id}
                   mediaUrl={card.source.url}
-                  user={{ avatarUrl: card.owner.avatar.url, verified: card.owner.verified }}
+                  user={{
+                    avatarUrl: card.owner.avatar.url,
+                    verified: card.owner.verified,
+                    profile: card.owner.id
+                  }}
                 />
               </Grid>
             )

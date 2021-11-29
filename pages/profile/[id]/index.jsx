@@ -32,7 +32,8 @@ export default function Index() {
 
   const userData = {
     avatarUrl: profile?.avatar?.url,
-    verified: profile?.verified
+    verified: profile?.verified,
+    id: profile?.id,
   }
 
   return (

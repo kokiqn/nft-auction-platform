@@ -9,20 +9,20 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 import styles from './Card.module.scss';
 import Link from '../link/Link'
-import { useRouter } from 'next/dist/client/router';
 
 export default function Card({
   name,
   mediaUrl,
   user = {
     avatarUrl: '/images/avatar.png',
-    verified: false
+    verified: false,
+    profile,
   },
   price,
   currency,
   likes = 0,
   timeLeft,
-  id
+  id,
 }) {
   const [live, setLive] = useState(false);
   const [time, setTime] = useState(timeLeft);
@@ -81,11 +81,11 @@ export default function Card({
 
   return (
     <div>
-      <Link href={`product/` + id}>
+      <Link href={`/product/` + id}>
         <CardContainer className={`${styles.card} ${live ? styles.live : ''}`}>
           <CardHeader
             className={styles.header}
-            avatar={<Avatar url={user.avatarUrl} verified={user.verified} size="30px" id={id}/>}
+            avatar={<Avatar url={user.avatarUrl} verified={user.verified} size="30px" id={user.profile}/>}
           />
           <div className={styles.mediaDiv}>
             <UpdateCard />

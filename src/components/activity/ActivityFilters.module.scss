@@ -3,6 +3,12 @@
   justify-content: center;
   margin: 1rem auto;
   position: relative;
-  bottom: 190px;
+  bottom: 20vh;
   font-family: Montserrat;
+}
+
+@media (max-height: 768px) {
+  .activity-filters {
+    padding: 3rem 0;
+  }
 }

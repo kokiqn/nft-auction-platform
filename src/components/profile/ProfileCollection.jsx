@@ -27,7 +27,9 @@ export default function ProfileCollection({ user, filters, items, functions }) {
               <Grid key={i} item xs={12} sm={6} lg={3}>
                 <Card
                   user={user}
-                  mediaUrl={card?.source?.formats?.thumbnail?.url} {...card}
+                  mediaUrl={card?.source?.formats?.thumbnail?.url} 
+                  id={card.id}
+                  {...card}
                 />
               </Grid>
             )

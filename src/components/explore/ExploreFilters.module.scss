@@ -13,3 +13,10 @@
     color: colors.$text_hint
   }
 }
+
+@media (max-width: 1200px) {
+  .explore-filters {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+}

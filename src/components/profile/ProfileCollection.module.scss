@@ -7,5 +7,7 @@
 @media (max-width: 1080px) {
   .profile-collection h3 {
     font-size: 32px;
+    max-width: max-content;
+    margin: auto;
   }
 }

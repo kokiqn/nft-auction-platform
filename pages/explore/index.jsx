@@ -30,11 +30,11 @@ export default function index() {
     <div>
       <Header />
       <Container maxWidth="xl">
-        <Grid container alignItems='center' paddingTop={5.375}>
-          <Grid item xs={3}>
+        <Grid container direction={{xs: 'column', lg: 'row'}} alignItems='center' paddingTop={5.375}>
+          <Grid item xs={10} md={3}>
             <ExploreTitle text="Explore" />
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={10} md={9}>
             <ExploreFilters
               filters={nftFilters}
               onChangeSort={handleChangeSort}

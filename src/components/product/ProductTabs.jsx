@@ -34,13 +34,13 @@ export default function ProductTabs({ text, bids = [], currency }) {
         </Box>
         <TabPanel className={styles.details} value="details">{text}</TabPanel>
         <TabPanel className={styles.bids} value="bids">
-          <Table sx={{ minWidth: 500 }}>
+          <Table>
             <TableBody>
               {bids.map((bid, i) => {
                 return (
                   <TableRow className={`table-row-${i}`}>
                     <TableCell>
-                      <User {...bid.user} />
+                      <User {...bid.user}/>
                     </TableCell>
                     <TableCell className={styles.price}>{bid.amount} {currency}</TableCell>
                     <TableCell className={styles.time}>

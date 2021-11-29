@@ -1,17 +1,23 @@
 @use "../../styles/colors.scss";
 
 .hero {
+  height: 35vh;
   background-color: colors.$primary_main;
-  height: 35%;
-  position: absolute;
-  right: 0;
-  left: 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .text {
   text-align: center;
-  position: relative;
-  top: 27%;
+  position: absolute;
+  top: 86px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    .text {
+      font-size: 3rem;
+    }
+  }
 }

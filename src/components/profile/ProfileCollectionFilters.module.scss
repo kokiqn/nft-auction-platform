@@ -11,5 +11,12 @@
   padding: 0 -2rem;
   font-family: Montserrat;
   font-weight: 500;
-  color: colors.$text_hint
+  color: colors.$text_hint;
+}
+
+@media (max-width: 900px) {
+  .profile-collection-filters {
+    margin-top: 2rem;
+    justify-content: center;
+  }
 }

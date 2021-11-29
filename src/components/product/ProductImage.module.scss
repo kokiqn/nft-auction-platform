@@ -15,3 +15,10 @@
     transform: scale(1.02);
   }
 }
+
+@media (max-width: 1000px) {
+  .product-image {
+    max-height: 500px;
+    padding-bottom: 2rem;
+  }
+}

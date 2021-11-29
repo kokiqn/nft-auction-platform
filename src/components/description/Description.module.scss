@@ -1,9 +1,9 @@
 @use '../../styles/colors.scss';
 
 .description {
-  margin: 0 auto 20rem auto;
+  margin: 0 auto;
   position: relative;
-  top: 200px;
+  bottom: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
 
 @media (max-width: 1200px) {
   .description {
-    width: 90%;
+    width: 90vw;
   }
 }
 

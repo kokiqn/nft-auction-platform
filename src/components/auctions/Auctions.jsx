@@ -27,10 +27,10 @@ export default function Auctions({ cards = [], filters, onChange, value }) {
             </Select>
           </FormControl>
         </div>
-        <Grid container spacing={1} justifyContent="center">
+        <Grid container spacing={2} justifyContent="center">
           {cards.map((card, key) => {
             return (
-              <Grid key={key} item xs={12} sm={6} lg={3}>
+              <Grid key={key} item >
                 <Card className={styles.item}
                   {...card}
                   mediaUrl={card.source.url}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import data from '../../../public/data/filtersProfile.json'
 import styles from './ProfileCollectionFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
@@ -13,7 +12,7 @@ export default function ProfileCollectionFilters({ filters, onChangeSort, onChan
 
   return (
     <div className={styles['profile-collection-filters']}>
-      <Stack direction="row" spacing={2}>
+      <Stack direction={{xs: "column", md: "row"}} spacing={2}>
         <FormControl sx={{ minWidth: 220 }}>
           <InputLabel id="sort-select" shrink={false}>{valueSort == '' && 'Sort by'}</InputLabel>
           <Select

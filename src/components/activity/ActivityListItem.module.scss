@@ -23,6 +23,10 @@
   }
 }
 
+.paragraphs:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 1024px) {
   .activity-item {
     width: 90vw;

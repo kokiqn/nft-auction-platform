@@ -40,6 +40,7 @@ export default function ProductInfo({
           name={creator?.username}
           avatar={creator?.avatar?.url}
           verified={creator?.verified}
+          profile={creator?.id}
           />
         </Grid>
         <Grid item xs={10} sm={5}>

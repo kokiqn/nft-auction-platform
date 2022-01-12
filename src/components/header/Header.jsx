@@ -17,14 +17,9 @@ export default function Header() {
   return (
     <div className={styles.wrapper}>
       <Container className={styles.container} maxWidth="xl" disableGutters>
-        <Grid container
-        alignItems="center"
-        spacing={{xs: 1}}
-        >
-          <Grid item md={2}>
-            <Logo />
-          </Grid>
-          <Grid item xs={5}>
+        <Grid container alignItems="center" spacing={{xs: 1}}>
+          <Grid item md={2}><Logo/></Grid>
+          <Grid item xs={7} sm={3} md={5}>
             <Box className={styles.box}>
               <SearchIcon sx={{ color: 'smoke', mr: 1, my: 0.5, fontSize: 20 }} />
               <TextField
@@ -36,19 +31,10 @@ export default function Header() {
                 InputProps={{ disableUnderline: true }} />
             </Box>
           </Grid>
-          <Grid item xs={11} sm={4} md={5} className={styles['button-wrapper']}> 
-            <Button
-              size="small"
-              className={styles.button}
-            >Home</Button>
-            <Button
-              className={styles.button}
-              size="small"
-            >Activity</Button>
-            <Button
-              className={styles.buttonLast}
-              size="large"
-            >Explore</Button>
+          <Grid item xs={12} sm={6} md={5} className={styles['button-wrapper']}> 
+            <Link href="/"><Button size="small" className={styles.button}>Home</Button></Link>
+            <Link href="/activity"><Button className={styles.button} size="small">Activity</Button></Link>
+            <Link href="/explore"><Button className={styles.buttonLast} size="large">Explore</Button></Link>
           </Grid>
         </Grid>
       </Container>

@@ -8,7 +8,7 @@ var chunk = require('lodash.chunk');
 
 export default function TopCollectors({ collectors = [], filters, onChange, value }) {
   
-  collectors.map((i, k) => i.id = (k + 1));
+  collectors.map((i, k) => i.listId = (k + 1));
   const split = chunk(collectors, 3);
 
   return (

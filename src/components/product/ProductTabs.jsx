@@ -40,7 +40,7 @@ export default function ProductTabs({ text, bids = [], currency }) {
                 return (
                   <TableRow className={`table-row-${i}`}>
                     <TableCell>
-                      <User {...bid.user}/>
+                      <User {...bid.user} profile={bid?.user?.id}/>
                     </TableCell>
                     <TableCell className={styles.price}>{bid.amount} {currency}</TableCell>
                     <TableCell className={styles.time}>

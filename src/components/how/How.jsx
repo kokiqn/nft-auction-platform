@@ -1,6 +1,7 @@
 import { Button, Container, Grid } from '@mui/material'
 import Step from './Step'
 
+import Link from 'next/link'
 import styles from './How.module.scss'
 
 export default function How({ description, title, items = [...itemData], link }) {
@@ -15,9 +16,7 @@ export default function How({ description, title, items = [...itemData], link })
             <p>{description}</p>
           </Grid>
           <Grid item>
-            <Button variant="contained">
-              <a href={link}>Learn More</a>
-            </Button>
+            <Link href="/how"><Button variant="contained">Learn More</Button></Link>
           </Grid>
         </Grid>
         <Grid container className={styles.steps} direction="column">

@@ -7,11 +7,12 @@ export default function CollectorColumn({ items = [] }) {
       {items.map((item, index) => {
         return (
           <Collector
-            {...item}            
+            id={item.listId}       
             name={item.username}
             nftsCount={item.nfts.length}
             avatar={item.avatar.url}
             verified={item.verified}
+            profile={item.id}
             type={(index + 1) % 2 === 0 && "light"}>
           </Collector>
         )

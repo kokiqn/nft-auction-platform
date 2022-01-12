@@ -32,7 +32,8 @@ export default function Index() {
 
   const userData = {
     avatarUrl: profile?.avatar?.url,
-    verified: profile?.verified
+    verified: profile?.verified,
+    profile: profile?.id,
   }
 
   return (
@@ -44,6 +45,7 @@ export default function Index() {
         info={profile?.info}
         avatar={profile?.avatar?.url}
         verified={profile?.verified}
+        profile={profile?.id}
       />
       <ProfileCollection
         user={userData}

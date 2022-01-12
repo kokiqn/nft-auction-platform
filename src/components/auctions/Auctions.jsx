@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Card from '../card/Card'
 import { Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 
@@ -11,7 +10,7 @@ export default function Auctions({ cards = [], filters, onChange, value }) {
         <div className={styles.header}>
           <h1 style={{ fontFamily: "Montserrat" }}>🔥 Live Auctions</h1>
           <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel id="sort-select" shrink={false}>{value == '' && 'Sort by'}</InputLabel>
+            <InputLabel id="sort-select" shrink={false}>{value == '' && 'Sort by'}</InputLabel>
             <Select
               sx={{ fontFamily: "Montserrat", color: "#e1e1fc", fill: "#e1e1fc" }}
               id="demo-simple-select"
@@ -33,8 +32,13 @@ export default function Auctions({ cards = [], filters, onChange, value }) {
               <Grid key={key} item >
                 <Card className={styles.item}
                   {...card}
+                  id={card.id}
                   mediaUrl={card.source.url}
-                  user={{avatarUrl: card.owner.avatar.url, verified: card.owner.verified}}
+                  user={{
+                    avatarUrl: card.owner.avatar.url,
+                    verified: card.owner.verified,
+                    profile: card.owner.id
+                  }}
                 />
               </Grid>
             )

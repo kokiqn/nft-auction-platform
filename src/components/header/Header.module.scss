@@ -37,3 +37,18 @@
   background-color: colors.$primary_main !important;
   font-weight: 700 !important;
 }
+
+@media (max-width: 768px) {
+  .button-wrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .button {
+    padding: 1rem !important;
+  }
+  .buttonLast {
+    padding: 0.9rem !important;
+  }
+}

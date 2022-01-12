@@ -24,3 +24,7 @@
   font-size: 0.95rem;
   font-weight: 600;
 }
+
+.user p:hover, .name:hover, .info:hover {
+  cursor: pointer;
+}

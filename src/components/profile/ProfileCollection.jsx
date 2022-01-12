@@ -26,10 +26,10 @@ export default function ProfileCollection({ user, filters, items, functions }) {
             return (
               <Grid key={i} item xs={12} sm={6} lg={3}>
                 <Card
-                  user={user}
-                  mediaUrl={card?.source?.formats?.thumbnail?.url} 
-                  id={card.id}
                   {...card}
+                  id={card.id}
+                  mediaUrl={card.source.url}
+                  user={user}
                 />
               </Grid>
             )
@@ -39,72 +39,3 @@ export default function ProfileCollection({ user, filters, items, functions }) {
     </div>
   )
 }
-
-const list = [
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-  {
-    name: "kdskpok",
-    mediaUrl: "/images/nft.jpg",
-    user: {
-      avatarUrl: '/images/avatar.png',
-      verified: false
-    },
-    price: 5,
-    currency: "ETH",
-    likes: 2870,
-  },
-]

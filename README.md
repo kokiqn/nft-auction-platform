@@ -6,6 +6,8 @@
 npm i
 npm run dev
 ```
+## 👉 Link to Netify
+https://61a615c56804bb009ea51f2b--amazing-stonebraker-de87db.netlify.app/
 
 ## 😏 Some tips
 
@@ -27,10 +29,3 @@ If you prefer, you can [use styled-components instead](https://mui.com/guides/in
 Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
 The example folder provides adapters for usage with MUI.
 More information [in the documentation](https://mui.com/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/getting-started/templates/) section.
